@@ -1,0 +1,47 @@
+﻿@model prjetax.Models.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="row mb-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                Tổng DN: <strong>@Model.Total</strong>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                Hoạt động: <strong>@Model.Active</strong>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                Không hoạt động: <strong>@Model.Inactive</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>DN mới nhất</h3>
+<table class="table table-striped">
+    <thead>
+        <tr><th>MST</th><th>Tên</th><th>Cán bộ</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model.Enterprises)
+        {
+            <tr>
+                <td>@e.TaxCode</td>
+                <td>@e.TaxPayerName</td>
+                <td>@e.Manager?.Name</td>
+                <td><a asp-controller="Enterprises" asp-action="Details" asp-route-id="@e.Id">Chi tiết</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

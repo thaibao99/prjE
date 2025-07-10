@@ -1,0 +1,69 @@
+﻿@model IEnumerable<prjetax.Models.EnterpriseHistory>
+@{
+    ViewData["Title"] = "Lịch sử các thông báo";
+    var selected = ViewBag.SelectedEnterpriseId as int?;
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Index" method="get" class="row g-2 mb-3">
+    <div class="col-auto">
+        <select name="enterpriseId"
+                asp-items="ViewBag.EnterprisesFilter"
+                class="form-select">
+            <option value="">-- Chọn doanh nghiệp --</option>
+        </select>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Lọc</button>
+    </div>
+    <div class="col-auto">
+        <a asp-action="Create"
+           asp-route-enterpriseId="@selected"
+           class="btn btn-success">Thêm bản ghi</a>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ngày</th>
+            <th>Văn bản đi</th>
+            <th>Nội dung</th>
+            <th>Thời hạn</th>
+            <th>Kết quả</th>
+            <th>Ghi chú</th>
+            <th>Đánh giá</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var h in Model)
+        {
+            <tr>
+                <td>@h.Date.ToString("dd/MM/yyyy")</td>
+                <td>
+                    @if (h.Document != null)
+                    {
+                        <!-- hiển thị tên file, khi click gọi action Download -->
+                        <a asp-action="Download"
+                           asp-route-id="@h.Id">
+                            @h.DocumentName
+                        </a>
+                    }
+                </td>
+                <td>@h.Content</td>
+                <td>@h.Reminder?.ToString("dd/MM/yyyy")</td>
+                <td>@h.Result</td>
+                <td>@h.Notes</td>
+                <td>@h.Rating</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@h.Id" class="btn btn-sm btn-warning">Sửa</a>
+                    <a asp-action="Details" asp-route-id="@h.Id" class="btn btn-sm btn-info">Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@h.Id" class="btn btn-sm btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

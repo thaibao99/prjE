@@ -1,0 +1,25 @@
+﻿@model prjetax.Models.EnterpriseDemo
+@{
+    ViewData["Title"] = "Chi tiết DN";
+}
+<h2>@ViewData["Title"]</h2>
+<dl class="row">
+    <dt class="col-sm-2">Mã thuế</dt>
+    <dd class="col-sm-10">@Model.TaxCode</dd>
+    <dt class="col-sm-2">Tên DN</dt>
+    <dd class="col-sm-10">@Model.TaxPayerName</dd>
+    <dt class="col-sm-2">Ngành chính</dt>
+    <dd class="col-sm-10">@Model.MainBusinessName</dd>
+    <dt class="col-sm-2">Cán bộ</dt>
+    <dd class="col-sm-10">@Model.Manager?.Name</dd>
+    <dt class="col-sm-2">Email</dt>
+    <dd class="col-sm-10">@Model.Email</dd>
+    <dt class="col-sm-2">Trạng thái</dt>
+    <dd class="col-sm-10">@Model.Status</dd>
+    <dt class="col-sm-2">Ghi chú</dt>
+    <dd class="col-sm-10">@Model.Notes</dd>
+</dl>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Sửa</a>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</p>

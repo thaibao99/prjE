@@ -1,0 +1,31 @@
+﻿@model IEnumerable<prjetax.Models.Manager>
+@{
+    ViewData["Title"] = "Danh sách nhân viên";
+}
+<h2>@ViewData["Title"]</h2>
+<p><a asp-action="Create" class="btn btn-success">Thêm mới</a></p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Tên nhân viên</th>
+            <th>Admin?</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.Username</td>
+                <td>@m.Name</td>
+                <td>@(m.IsAdmin ? "Yes" : "No")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@m.Id" class="btn btn-sm btn-warning">Sửa</a>
+                    <a asp-action="Details" asp-route-id="@m.Id" class="btn btn-sm btn-info">Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@m.Id" class="btn btn-sm btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

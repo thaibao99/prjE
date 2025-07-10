@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using prjetax.Models;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace prjetax.Controllers
 {
@@ -18,28 +19,29 @@ namespace prjetax.Controllers
         // GET: /Enterprises
         public async Task<IActionResult> Index(string search, int? managerId)
         {
-            // Đổ dropdown né
-            ViewBag.Managers = await _context.Managers.OrderBy(m => m.Name).ToListAsync();
+            // Lấy danh sách cán bộ để đổ vào dropdown
+            var allManagers = await _context.Managers
+                                            .OrderBy(m => m.Name)
+                                            .ToListAsync();
+
+            // Tạo SelectList: Id là value, FullName là text, managerId là selectedValue
+            ViewBag.Managers = new SelectList(allManagers, "Id", "Name", managerId);
             ViewBag.Search = search;
-            ViewBag.SelectedManagerId = managerId;
 
-            var q = _context.Enterprises.Include(e => e.Manager).AsQueryable();
-
-            if (!IsAdmin)
-            {
-                // Manager chỉ thấy DN mình quản lý
-                q = q.Where(e => e.ManagerId == ManagerId);
-            }
-            else if (managerId.HasValue)
-            {
-                q = q.Where(e => e.ManagerId == managerId.Value);
-            }
+            // Query chính: lọc theo từ khóa và theo managerId nếu có
+            var q = _context.Enterprises
+                            .Include(e => e.Manager)
+                            .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(search))
                 q = q.Where(e => e.TaxPayerName.Contains(search));
+            if (managerId.HasValue)
+                q = q.Where(e => e.ManagerId == managerId.Value);
 
-            return View(await q.ToListAsync());
+            var list = await q.ToListAsync();
+            return View(list);
         }
+
 
         // GET: /Enterprises/Create
         public async Task<IActionResult> Create()

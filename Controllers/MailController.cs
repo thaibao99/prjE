@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using prjetax.Models;
-using prjetax.Models;   // for SendEmailViewModel
-using PrjEtax.Services;
 using Microsoft.EntityFrameworkCore;
+using prjetax.Models;         // chứa EnterpriseDemo, SendEmailViewModel
+using PrjEtax.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,49 +18,71 @@ namespace prjetax.Controllers
             _context = context;
             _emailService = emailService;
         }
-
-        // GET: /Mail/SendEmail/{id?}
-        public async Task<IActionResult> SendEmail(int? id)
+        public async Task<IActionResult> SendEmail(int id)
         {
-            var vm = new SendEmailViewModel();
-            if (id.HasValue)
-            {
-                var ent = await _context.Enterprises.FindAsync(id.Value);
-                if (ent != null)
-                {
-                    vm.ToList = new List<string> { ent.Email };
-                    vm.Subject = $"Nhắc nhở doanh nghiệp {ent.TaxPayerName}";
-                    vm.Body = $"Kính gửi {ent.TaxPayerName},\n\nĐây là email nhắc việc...";
-                }
-            }
-            else
-            {
-                // gửi hàng loạt
-                vm.ToList = await _context.Enterprises
-                                   .Select(e => e.Email)
-                                   .Where(email => !string.IsNullOrEmpty(email))
-                                   .Distinct()
-                                   .ToListAsync();
-                vm.Subject = "Nhắc nhở chung";
-                vm.Body = "Kính gửi quý doanh nghiệp,...";
-            }
+            var ent = await _context.Enterprises.FindAsync(id);
+            if (ent == null) return NotFound();
 
+            var vm = new SendEmailViewModel
+            {
+                ToEmail = ent.Email,
+                Subject = $"Nhắc nhở doanh nghiệp {ent.TaxPayerName}",
+                Body = $"Kính gửi {ent.TaxPayerName},\n\nĐây là email nhắc việc..."
+            };
+            ViewBag.EnterpriseId = id;
             return View(vm);
         }
 
-        // POST: /Mail/SendEmail
+        // POST: /Mail/SendEmail/5
         [HttpPost, ValidateAntiForgeryToken]
-        public async Task<IActionResult> SendEmail(SendEmailViewModel vm)
+        
+        public async Task<IActionResult> SendEmail(int id, SendEmailViewModel vm)
         {
-            if (!ModelState.IsValid) return View(vm);
-
-            foreach (var to in vm.ToList.Distinct())
+            if (!ModelState.IsValid)
             {
-                await _emailService.SendEmailAsync(to, vm.Subject, vm.Body);
+                ViewBag.EnterpriseId = id;
+                return View(vm);
             }
 
-            TempData["Success"] = "Gửi mail thành công!";
+            // Chuyển attachment thành byte[]
+            byte[] fileBytes = null;
+            string fileName = null;
+            if (vm.Attachment != null && vm.Attachment.Length > 0)
+            {
+                fileName = vm.Attachment.FileName;
+                using var ms = new MemoryStream();
+                await vm.Attachment.CopyToAsync(ms);
+                fileBytes = ms.ToArray();
+            }
+
+            // Gọi EmailService với mảng byte
+            await _emailService.SendEmailAsync(
+                vm.ToEmail,
+                vm.Subject,
+                vm.Body,
+                fileBytes,        // đây là byte[]
+                fileName          // và tên file
+            );
+
+            // Lưu vào lịch sử...
+            var hist = new EnterpriseHistory
+            {
+                EnterpriseId = id,
+                Date = DateTime.Now,
+                Content = $"Gửi mail: “{vm.Subject}”",
+                Reminder = vm.Deadline,
+                Notes = vm.Notes,
+                  Result       = "Đã gửi mail thành công", 
+                Rating = vm.Rating,
+                DocumentName = fileName,
+                Document = fileBytes
+            };
+            _context.EnterpriseHistories.Add(hist);
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Gửi mail và ghi lịch sử thành công!";
             return RedirectToAction("Index", "Enterprises");
         }
+
     }
 }
