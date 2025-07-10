@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using prjetax.Models;
 using prjetax.Models;   // for SendEmailViewModel
-using prjetax.Services;
+using PrjEtax.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;

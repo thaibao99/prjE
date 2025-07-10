@@ -1,1 +1,27 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+<h2 class="mb-4">Đăng nhập</h2>
+
+<form asp-action="Login" method="post" class="w-50 mx-auto">
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+    @* Hiển thị lỗi nếu có *@
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    <div class="mb-3">
+        <label for="username" class="form-label">Tài khoản</label>
+        <input id="username" name="username" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Mật khẩu</label>
+        <input id="password" name="password" type="password" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+</form>
