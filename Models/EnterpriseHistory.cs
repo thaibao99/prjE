@@ -15,11 +15,13 @@ namespace prjetax.Models
         public EnterpriseDemo Enterprise { get; set; }
 
         public DateTime Date { get; set; }
-        public string Document { get; set; }
+        public byte[]? Document { get; set; }
         public string Content { get; set; }
         public DateTime? Reminder { get; set; }
-        public string Result { get; set; }
-        public string Notes { get; set; }
-        public string Rating { get; set; }
+        public string? Result { get; set; }
+        public string? Notes { get; set; }
+        public string? Rating { get; set; }
+
+        public string? DocumentName { get; set; }
     }
 }

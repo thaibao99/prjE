@@ -1,0 +1,42 @@
+﻿@model prjetax.Models.EnterpriseDemo
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    var isEdit = Model?.Id > 0;
+    ViewData["Title"] = isEdit ? "Chỉnh sửa doanh nghiệp" : "Tạo doanh nghiệp mới";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="@(isEdit ? "Edit" : "Create")" method="post">
+    @if (isEdit)
+    {
+        <input type="hidden" asp-for="Id" />
+    }
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="TaxCode" class="form-label"></label>
+        <input asp-for="TaxCode" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TaxPayerName" class="form-label"></label>
+        <input asp-for="TaxPayerName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="MainBusinessName" class="form-label"></label>
+        <input asp-for="MainBusinessName" class="form-control" />
+    </div>
+    <!-- ... các field khác ... -->
+
+    <div class="mb-3">
+        <label asp-for="ManagerId" class="form-label">Cán bộ quản lý</label>
+        <select asp-for="ManagerId" class="form-select" asp-items="ViewBag.Managers">
+            <option value="">-- Chọn cán bộ --</option>
+        </select>
+        <span asp-validation-for="ManagerId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</form>

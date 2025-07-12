@@ -32,7 +32,35 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [D:/etax/Views/Home/Index.cshtml]
+=======
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/EnterpriseHistories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZUhpc3Rvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Enterprises/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Enterprises/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Enterprises/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Enterprises/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Home/Index.cshtml]
+>>>>>>> 0c5e7c0a51042801e4ef075b32af4e4e04d5c2fa
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -40,7 +68,31 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [D:/etax/Views/Shared/Error.cshtml]
+=======
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Mail/SendEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbFxTZW5kRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Managers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Managers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Managers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Managers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Shared/Error.cshtml]
+>>>>>>> 0c5e7c0a51042801e4ef075b32af4e4e04d5c2fa
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
