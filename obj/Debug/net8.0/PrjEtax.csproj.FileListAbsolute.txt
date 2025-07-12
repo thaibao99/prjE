@@ -280,3 +280,6 @@ C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\refint\PrjEtax.d
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\PrjEtax.pdb
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\PrjEtax.genruntimeconfig.cache
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\ref\PrjEtax.dll
+D:\etax\obj\Debug\net8.0\PrjEtax.dll
+D:\etax\obj\Debug\net8.0\refint\PrjEtax.dll
+D:\etax\obj\Debug\net8.0\PrjEtax.pdb
