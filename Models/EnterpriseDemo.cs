@@ -10,34 +10,88 @@ namespace prjetax.Models
         [Key]
         public int Id { get; set; }
 
-        [StringLength(50)] public string TaxAgencyCode { get; set; }
-        [StringLength(200)] public string TaxAgencyName { get; set; }
-        [StringLength(200)] public string TaxPayer { get; set; }
-        [StringLength(50)] public string TaxCode { get; set; }
-        [StringLength(500)] public string TaxPayerName { get; set; }
-        [StringLength(200)] public string ManagementDept { get; set; }
-        [StringLength(100)] public string ManagerName { get; set; }
-        [StringLength(50)] public string MainBusinessCode { get; set; }
-        [StringLength(200)] public string MainBusinessName { get; set; }
-        public string BusinessDescription { get; set; }
-        [StringLength(200)] public string DirectorName { get; set; }
-        [StringLength(50)] public string DirectorPhone { get; set; }
-        [StringLength(200)] public string ChiefAccountant { get; set; }
-        [StringLength(50)] public string ChiefAccountantPhone { get; set; }
-        [StringLength(100)] public string DocumentNumber { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập Mã cơ quan thuế")]
+        [StringLength(50)]
+        public string TaxAgencyCode { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng nhập Tên cơ quan thuế")]
+        [StringLength(200)]
+        public string TaxAgencyName { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Người nộp thuế")]
+        [StringLength(200)]
+        public string TaxPayer { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Mã số thuế")]
+        [StringLength(50)]
+        public string TaxCode { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Tên doanh nghiệp")]
+        [StringLength(500)]
+        public string TaxPayerName { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Phòng quản lý")]
+        [StringLength(200)]
+        public string ManagementDept { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Tên cán bộ quản lý (ghi trên chứng từ)")]
+        [StringLength(100)]
+        public string ManagerName { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Mã ngành nghề chính")]
+        [StringLength(50)]
+        public string MainBusinessCode { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Ngành nghề chính")]
+        [StringLength(200)]
+        public string MainBusinessName { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Mô tả hoạt động kinh doanh")]
+        public string BusinessDescription { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Tên Giám đốc")]
+        [StringLength(200)]
+        public string DirectorName { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Số điện thoại Giám đốc")]
+        [StringLength(50)]
+        public string DirectorPhone { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Tên Kế toán trưởng")]
+        [StringLength(200)]
+        public string ChiefAccountant { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Số điện thoại Kế toán trưởng")]
+        [StringLength(50)]
+        public string ChiefAccountantPhone { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Số chứng từ")]
+        [StringLength(100)]
+        public string DocumentNumber { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng chọn Ngày chứng từ")]
         [Column(TypeName = "date")]
         public DateTime? DocumentDate { get; set; }
 
-        [StringLength(100)] public string DocumentType { get; set; }
-        [StringLength(200)] public string Email { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập Loại chứng từ")]
+        [StringLength(100)]
+        public string DocumentType { get; set; }
 
-        // FK → Managers(Id)
+        [Required(ErrorMessage = "Vui lòng nhập Email")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        [StringLength(200)]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng chọn Cán bộ phụ trách")]
         public int? ManagerId { get; set; }
+
         [ForeignKey(nameof(ManagerId))]
         public Manager Manager { get; set; }
 
-        [StringLength(50)] public string Status { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập Trạng thái")]
+        [StringLength(50)]
+        public string Status { get; set; }
+
         public string Notes { get; set; }
     }
 }

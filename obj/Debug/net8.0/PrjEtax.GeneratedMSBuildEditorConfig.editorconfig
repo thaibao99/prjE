@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZUhpc3Rvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/EnterpriseHistories/Summary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZUhpc3Rvcmllc1xTdW1tYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Enterprises/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Enterprises/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Enterprises/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Thai Bao/source/repos/PrjEtax/PrjEtax/Views/Enterprises/Index.cshtml]

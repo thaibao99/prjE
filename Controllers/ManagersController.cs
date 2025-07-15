@@ -32,12 +32,23 @@ namespace prjetax.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Manager manager)
         {
-            if (!IsAdmin) return Forbid();
-            if (!ModelState.IsValid) return View(manager);
+            try
+            {
+                if (!IsAdmin) return Forbid();
+                if (!ModelState.IsValid) return View(manager);
 
-            _context.Managers.Add(manager);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+                _context.Managers.Add(manager);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new
+                {
+                    message = "Lỗi khi tạo nhân viên mới",
+                    ex.Message
+                });
+            }
         }
 
         // GET: /Managers/Edit/5

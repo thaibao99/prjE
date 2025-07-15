@@ -1,0 +1,40 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "Tổng quan nhắc việc";
+}
+
+<h2>@ViewData["Title"]</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Doanh nghiệp</th>
+            <th>Ngày nhắc việc gần nhất</th>
+            <th>Cán bộ phụ trách</th>
+            <th>Số lần đã gửi mail</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TaxPayerName</td>
+                <td>
+                    @(item.MailCount > 0
+                                    ? ((DateTime)item.LatestReminder).ToString("dd/MM/yyyy")
+                                    : "Chưa từng gửi email nhắc")
+            </td>
+            <td>@item.ManagerName</td>
+            <td>@item.MailCount</td>
+            <td>
+                <a asp-controller="EnterpriseHistories"
+                   asp-action="Index"
+                   asp-route-enterpriseId="@item.EnterpriseId"
+                   class="btn btn-sm btn-primary">
+                    Chi tiết
+                </a>
+            </td>
+        </tr>
+                }
+    </tbody>
+</table>

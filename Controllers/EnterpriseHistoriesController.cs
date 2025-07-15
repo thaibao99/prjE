@@ -15,8 +15,47 @@ namespace PrjEtax.Controllers
             _context = context;
         }
 
+        // GET: /EnterpriseHistories/Summary
+        public async Task<IActionResult> Summary()
+        {
+            // 1. Lấy thông tin role & managerId từ session
+            bool isAdmin = HttpContext.Session.GetInt32("IsAdmin") == 1;
+            int? managerId = HttpContext.Session.GetInt32("ManagerId");
+
+            // 2. Bắt đầu query Enterprises kèm Manager
+            var query = _context.Enterprises
+                                .Include(e => e.Manager)
+                                .AsQueryable();
+
+            // 3. Nếu không phải Admin, chỉ lọc doanh nghiệp do chính user quản lý
+            if (!isAdmin && managerId.HasValue)
+            {
+                query = query.Where(e => e.ManagerId == managerId.Value);
+            }
+
+            // 4. Projection ra các trường cần thiết
+            var list = await query
+                .Select(e => new {
+                    EnterpriseId = e.Id,
+                    TaxPayerName = e.TaxPayerName,
+                    ManagerName = e.Manager.Name,
+                    LatestReminder = _context.EnterpriseHistories
+                                        .Where(h => h.EnterpriseId == e.Id)
+                                        .OrderByDescending(h => h.Date)
+                                        .Select(h => h.Date)
+                                        .FirstOrDefault(),
+                    MailCount = _context.EnterpriseHistories
+                                        .Count(h => h.EnterpriseId == e.Id)
+                })
+                .ToListAsync();
+
+            // 5. Trả về list trực tiếp làm model cho view
+            return View(list);
+        }
+
         // GET: EnterpriseHistories
         // Nếu có ?enterpriseId= thì lọc, ngược lại show toàn bộ
+
         public async Task<IActionResult> Index(int? enterpriseId)
         {
             // build dropdown list of enterprises

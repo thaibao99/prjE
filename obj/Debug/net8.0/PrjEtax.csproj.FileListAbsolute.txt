@@ -267,12 +267,6 @@ C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\scopedcss\projec
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets\msbuild.PrjEtax.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets\msbuild.PrjEtax.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets\msbuild.build.PrjEtax.props
-C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.PrjEtax.props
-C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.PrjEtax.props
-C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\PrjEtax.csproj.Up2Date
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\PrjEtax.dll
@@ -280,3 +274,8 @@ C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\refint\PrjEtax.d
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\PrjEtax.pdb
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\PrjEtax.genruntimeconfig.cache
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\ref\PrjEtax.dll
+C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets.build.json.cache

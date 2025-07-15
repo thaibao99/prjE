@@ -2,28 +2,16 @@
 @using Microsoft.AspNetCore.Mvc.Rendering
 
 @{
-    ViewData["Title"] = "Thêm mới doanh nghiệp";
+    ViewData["Title"] = "Chỉnh sửa doanh nghiệp";
     var managers = ViewBag.Managers as SelectList;
 }
 
 <h2>@ViewData["Title"]</h2>
 
-@* Hiển thị TempData nếu có *@
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger">
-        @TempData["Error"]
-    </div>
-}
-@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success">
-        @TempData["Success"]
-    </div>
-}
+<form asp-action="Edit" method="post" class="row g-3">
+    <input type="hidden" asp-for="Id" />
 
-<form asp-action="Create" method="post" class="row g-3">
-    @* Ví dụ với một field bắt buộc: TaxAgencyCode *@
+    <!-- Mã cơ quan thuế -->
     <div class="col-md-6">
         <label asp-for="TaxAgencyCode" class="form-label">
             Mã cơ quan thuế <span class="text-danger">*</span>
@@ -32,7 +20,7 @@
         <span asp-validation-for="TaxAgencyCode" class="text-danger"></span>
     </div>
 
-    @* Tất cả các field đánh dấu * đỏ nếu [Required] *@
+    <!-- Tên cơ quan thuế -->
     <div class="col-md-6">
         <label asp-for="TaxAgencyName" class="form-label">
             Tên cơ quan thuế <span class="text-danger">*</span>
@@ -41,6 +29,7 @@
         <span asp-validation-for="TaxAgencyName" class="text-danger"></span>
     </div>
 
+    <!-- Người nộp thuế -->
     <div class="col-md-6">
         <label asp-for="TaxPayer" class="form-label">
             Người nộp thuế <span class="text-danger">*</span>
@@ -49,6 +38,7 @@
         <span asp-validation-for="TaxPayer" class="text-danger"></span>
     </div>
 
+    <!-- Mã số thuế -->
     <div class="col-md-6">
         <label asp-for="TaxCode" class="form-label">
             Mã số thuế <span class="text-danger">*</span>
@@ -57,6 +47,7 @@
         <span asp-validation-for="TaxCode" class="text-danger"></span>
     </div>
 
+    <!-- Tên doanh nghiệp -->
     <div class="col-md-6">
         <label asp-for="TaxPayerName" class="form-label">
             Tên doanh nghiệp <span class="text-danger">*</span>
@@ -65,6 +56,7 @@
         <span asp-validation-for="TaxPayerName" class="text-danger"></span>
     </div>
 
+    <!-- Phòng quản lý -->
     <div class="col-md-6">
         <label asp-for="ManagementDept" class="form-label">
             Phòng quản lý <span class="text-danger">*</span>
@@ -73,6 +65,7 @@
         <span asp-validation-for="ManagementDept" class="text-danger"></span>
     </div>
 
+    <!-- Tên cán bộ quản lý (ghi trên chứng từ) -->
     <div class="col-md-6">
         <label asp-for="ManagerName" class="form-label">
             Tên cán bộ quản lý (ghi trên chứng từ) <span class="text-danger">*</span>
@@ -81,6 +74,7 @@
         <span asp-validation-for="ManagerName" class="text-danger"></span>
     </div>
 
+    <!-- Mã ngành nghề chính -->
     <div class="col-md-6">
         <label asp-for="MainBusinessCode" class="form-label">
             Mã ngành nghề chính <span class="text-danger">*</span>
@@ -89,6 +83,7 @@
         <span asp-validation-for="MainBusinessCode" class="text-danger"></span>
     </div>
 
+    <!-- Ngành nghề chính -->
     <div class="col-md-6">
         <label asp-for="MainBusinessName" class="form-label">
             Ngành nghề chính <span class="text-danger">*</span>
@@ -97,6 +92,7 @@
         <span asp-validation-for="MainBusinessName" class="text-danger"></span>
     </div>
 
+    <!-- Mô tả hoạt động kinh doanh -->
     <div class="col-12">
         <label asp-for="BusinessDescription" class="form-label">
             Mô tả hoạt động kinh doanh <span class="text-danger">*</span>
@@ -105,6 +101,7 @@
         <span asp-validation-for="BusinessDescription" class="text-danger"></span>
     </div>
 
+    <!-- Tên Giám đốc & SĐT Giám đốc -->
     <div class="col-md-6">
         <label asp-for="DirectorName" class="form-label">
             Tên Giám đốc <span class="text-danger">*</span>
@@ -112,7 +109,6 @@
         <input asp-for="DirectorName" class="form-control" />
         <span asp-validation-for="DirectorName" class="text-danger"></span>
     </div>
-
     <div class="col-md-6">
         <label asp-for="DirectorPhone" class="form-label">
             Số điện thoại Giám đốc <span class="text-danger">*</span>
@@ -121,6 +117,7 @@
         <span asp-validation-for="DirectorPhone" class="text-danger"></span>
     </div>
 
+    <!-- Tên Kế toán trưởng & SĐT Kế toán trưởng -->
     <div class="col-md-6">
         <label asp-for="ChiefAccountant" class="form-label">
             Tên Kế toán trưởng <span class="text-danger">*</span>
@@ -128,7 +125,6 @@
         <input asp-for="ChiefAccountant" class="form-control" />
         <span asp-validation-for="ChiefAccountant" class="text-danger"></span>
     </div>
-
     <div class="col-md-6">
         <label asp-for="ChiefAccountantPhone" class="form-label">
             Số điện thoại Kế toán trưởng <span class="text-danger">*</span>
@@ -137,6 +133,7 @@
         <span asp-validation-for="ChiefAccountantPhone" class="text-danger"></span>
     </div>
 
+    <!-- Số chứng từ & Ngày chứng từ -->
     <div class="col-md-6">
         <label asp-for="DocumentNumber" class="form-label">
             Số chứng từ <span class="text-danger">*</span>
@@ -144,7 +141,6 @@
         <input asp-for="DocumentNumber" class="form-control" />
         <span asp-validation-for="DocumentNumber" class="text-danger"></span>
     </div>
-
     <div class="col-md-6">
         <label asp-for="DocumentDate" class="form-label">
             Ngày chứng từ <span class="text-danger">*</span>
@@ -153,6 +149,7 @@
         <span asp-validation-for="DocumentDate" class="text-danger"></span>
     </div>
 
+    <!-- Loại chứng từ -->
     <div class="col-md-6">
         <label asp-for="DocumentType" class="form-label">
             Loại chứng từ <span class="text-danger">*</span>
@@ -161,26 +158,25 @@
         <span asp-validation-for="DocumentType" class="text-danger"></span>
     </div>
 
+    <!-- Email -->
     <div class="col-md-6">
         <label asp-for="Email" class="form-label">
-            Email doanh nghiệp <span class="text-danger">*</span>
+            Email <span class="text-danger">*</span>
         </label>
         <input asp-for="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
 
+    <!-- Dropdown Cán bộ phụ trách -->
     <div class="col-md-6">
         <label asp-for="ManagerId" class="form-label">
             Cán bộ phụ trách <span class="text-danger">*</span>
         </label>
-        <select asp-for="ManagerId"
-                class="form-select"
-                asp-items="managers"
-                asp-option-label="-- Chọn cán bộ --">
-        </select>
+        <select asp-for="ManagerId" class="form-select" asp-items="managers" asp-option-label="-- Chọn cán bộ --"></select>
         <span asp-validation-for="ManagerId" class="text-danger"></span>
     </div>
 
+    <!-- Trạng thái -->
     <div class="col-md-6">
         <label asp-for="Status" class="form-label">
             Trạng thái <span class="text-danger">*</span>
@@ -189,6 +185,7 @@
         <span asp-validation-for="Status" class="text-danger"></span>
     </div>
 
+    <!-- Ghi chú không bắt buộc -->
     <div class="col-12">
         <label asp-for="Notes" class="form-label">Ghi chú</label>
         <textarea asp-for="Notes" class="form-control" rows="2"></textarea>
@@ -196,7 +193,7 @@
     </div>
 
     <div class="col-12">
-        <button type="submit" class="btn btn-success">Lưu</button>
+        <button type="submit" class="btn btn-primary">Cập nhật</button>
         <a asp-action="Index" class="btn btn-secondary">Hủy</a>
     </div>
 </form>

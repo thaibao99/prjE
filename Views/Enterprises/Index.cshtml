@@ -3,25 +3,33 @@
 
 @{
     ViewData["Title"] = "Danh sách doanh nghiệp";
-    string search = ViewBag.Search as string;
+    var isAdmin = (ViewBag.IsAdmin as bool?) == true;
+    var search  = ViewBag.Search as string;
 }
 
 <h2>@ViewData["Title"]</h2>
 
 <form asp-action="Index" method="get" class="row g-2 mb-3">
     <div class="col-auto">
-        <input type="text" name="search"
+        <input type="text"
+               name="search"
                class="form-control"
                placeholder="Tìm kiếm tên doanh nghiệp..."
                value="@search" />
     </div>
-    <div class="col-auto">
-        <select name="managerId"
-                class="form-select"
-                asp-items="ViewBag.Managers">
-            <option value="">-- Tất cả cán bộ --</option>
-        </select>
-    </div>
+
+    @if (isAdmin && ViewBag.Managers != null)
+    {
+        <div class="col-auto">
+            <select name="managerId"
+                    class="form-select"
+                    asp-items="ViewBag.Managers"
+                    asp-option-label="-- Tất cả cán bộ --">
+            </select>
+        </div>
+    }
+
+
     <div class="col-auto">
         <button type="submit" class="btn btn-primary">Lọc</button>
     </div>
@@ -34,38 +42,33 @@
     <thead>
         <tr>
             <th>Mã thuế</th>
-            <th>Tên DN</th>
-            <th>Ngành chính</th>
-            <th>Cán bộ</th>
+            <th>Tên doanh nghiệp</th>
+            <th>Ngành nghề chính</th>
+            <th>Cán bộ phụ trách</th>
             <th>Email</th>
-            <th></th>
+            <th>Hành động</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var e in Model)
-        {
-            <tr>
-                <td>@e.TaxCode</td>
-                <td>@e.TaxPayerName</td>
-                <td>@e.MainBusinessName</td>
-                <td>@e.Manager?.Name</td>
-                <td>@e.Email</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@e.Id" class="btn btn-sm btn-warning">Sửa</a>
-                    <a asp-action="Details" asp-route-id="@e.Id" class="btn btn-sm btn-info">Chi tiết</a>
-                    <a asp-action="Delete" asp-route-id="@e.Id" class="btn btn-sm btn-danger">Xóa</a>
-                    <a asp-controller="Mail" asp-action="SendEmail" asp-route-id="@e.Id" class="btn btn-sm btn-secondary">Mail</a>
-
-                    <!-- Nút LỊCH SỬ -->
-                    <a asp-controller="EnterpriseHistories"
-                       asp-action="Index"
-                       asp-route-enterpriseId="@e.Id"
-                       class="btn btn-sm btn-primary">
-                        Lịch sử
-                    </a>
-                </td>
-            </tr>
-        }
-
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.TaxCode</td>
+            <td>@e.TaxPayerName</td>
+            <td>@e.MainBusinessName</td>
+            <td>@e.Manager?.Name</td>      @* dùng Name, khớp với SelectList(allManagers, "Id", "Name", …) *@
+            <td>@e.Email</td>
+            <td>
+                <a asp-action="Edit"    asp-route-id="@e.Id" class="btn btn-sm btn-warning">Sửa</a>
+                <a asp-action="Details" asp-route-id="@e.Id" class="btn btn-sm btn-info">Chi tiết</a>
+                <a asp-action="Delete"  asp-route-id="@e.Id" class="btn btn-sm btn-danger">Xóa</a>
+                <a asp-controller="Mail"         asp-action="SendEmail"      asp-route-id="@e.Id" class="btn btn-sm btn-secondary">Mail</a>
+                <a asp-controller="EnterpriseHistories"
+                   asp-action="Index"
+                   asp-route-enterpriseId="@e.Id"
+                   class="btn btn-sm btn-primary">Lịch sử</a>
+            </td>
+        </tr>
+    }
     </tbody>
 </table>
