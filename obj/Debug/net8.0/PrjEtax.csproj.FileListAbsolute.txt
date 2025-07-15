@@ -274,8 +274,14 @@ C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\refint\PrjEtax.d
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\PrjEtax.pdb
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\PrjEtax.genruntimeconfig.cache
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\ref\PrjEtax.dll
+<<<<<<< HEAD
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\rpswa.dswa.cache.json
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
 C:\Users\Thai Bao\source\repos\PrjEtax\PrjEtax\obj\Debug\net8.0\staticwebassets.build.json.cache
+=======
+D:\etax\obj\Debug\net8.0\PrjEtax.dll
+D:\etax\obj\Debug\net8.0\refint\PrjEtax.dll
+D:\etax\obj\Debug\net8.0\PrjEtax.pdb
+>>>>>>> 221c9162479544bda88a03f30c074f0fd41be95a
