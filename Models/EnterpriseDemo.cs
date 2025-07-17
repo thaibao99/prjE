@@ -69,7 +69,7 @@ namespace prjetax.Models
         [StringLength(100)]
         public string DocumentNumber { get; set; }
 
-        [Required(ErrorMessage = "Vui lòng chọn Ngày chứng từ")]
+        
         [Column(TypeName = "date")]
         public DateTime? DocumentDate { get; set; }
 
@@ -86,12 +86,12 @@ namespace prjetax.Models
         public int? ManagerId { get; set; }
 
         [ForeignKey(nameof(ManagerId))]
-        public Manager Manager { get; set; }
+        public Manager? Manager { get; set; }
 
-        [Required(ErrorMessage = "Vui lòng nhập Trạng thái")]
+        
         [StringLength(50)]
         public string Status { get; set; }
 
-        public string Notes { get; set; }
+        public string? Notes { get; set; }
     }
 }

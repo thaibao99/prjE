@@ -3,30 +3,57 @@
     var isEdit = Model?.Id > 0;
     ViewData["Title"] = isEdit ? "Chỉnh sửa nhân viên" : "Tạo nhân viên";
 }
-<h2>@ViewData["Title"]</h2>
 
-<form asp-action="@(isEdit ? "Edit" : "Create")" method="post">
-    @if (isEdit)
-    {
-        <input type="hidden" asp-for="Id" />
-    }
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="mb-3">
-        <label asp-for="Username" class="form-label"></label>
-        <input asp-for="Username" class="form-control" />
+<div class="container py-4">
+    <div class="card-modern shadow-sm mx-auto" style="max-width:500px;">
+        <div class="card-header bg-gradient-primary text-white d-flex align-items-center">
+            <i class="bi bi-person-gear fs-2 me-2"></i>
+            <h5 class="mb-0">@ViewData["Title"]</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="@(isEdit ? "Edit" : "Create")" method="post" novalidate>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+                @if (isEdit)
+                {
+                    <input type="hidden" asp-for="Id" />
+                }
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Username" class="form-control" id="username" placeholder="Tài khoản" />
+                    <label for="username">Tài khoản *</label>
+                    <span asp-validation-for="Username" class="text-danger small"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="PasswordHash" type="password" class="form-control" id="password" placeholder="Mật khẩu" />
+                    <label for="password">Mật khẩu @(isEdit ? "(để trống nếu không đổi)" : "*")</label>
+                    <span asp-validation-for="PasswordHash" class="text-danger small"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Name" class="form-control" id="name" placeholder="Họ và tên" />
+                    <label for="name">Họ và tên *</label>
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+
+                <div class="form-check form-switch mb-4">
+                    <input asp-for="IsAdmin" class="form-check-input" id="isAdmin" />
+                    <label class="form-check-label" for="isAdmin">
+                        Quyền Admin
+                    </label>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success me-2">
+                        <i class="bi bi-save-fill me-1"></i> Lưu
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-x-circle-fill me-1"></i> Hủy
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="mb-3">
-        <label asp-for="PasswordHash" class="form-label">Password</label>
-        <input asp-for="PasswordHash" type="password" class="form-control" />
-    </div>
-    <div class="mb-3">
-        <label asp-for="Name" class="form-label"></label>
-        <input asp-for="Name" class="form-control" />
-    </div>
-    <div class="form-check mb-3">
-        <input asp-for="IsAdmin" class="form-check-input" />
-        <label asp-for="IsAdmin" class="form-check-label"></label>
-    </div>
-    <button type="submit" class="btn btn-primary">Lưu</button>
-    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
-</form>
+</div>

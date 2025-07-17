@@ -8,69 +8,110 @@
     var isAdmin = (bool)(ViewBag.IsAdmin as bool? ?? false);
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<form method="get" class="row g-2 mb-3">
-    @if (isAdmin)
-    {
-        <div class="col-auto">
-            <label class="form-label">Chọn doanh nghiệp:</label>
-            <select name="enterpriseId"
-                    asp-items="enterprises"
-                    class="form-select"
-                    onchange="this.form.submit()">
-                <option value="">-- Tất cả --</option>
-            </select>
+<div class="container py-4">
+    <div class="card-modern shadow-sm mb-4">
+        <div class="card-header bg-gradient-info text-white d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-clock-history fs-2 me-2"></i>
+                <h5 class="mb-0">@ViewData["Title"]</h5>
+            </div>
+            @if (isAdmin)
+            {
+                <a asp-action="Create"
+                   asp-route-enterpriseId="@(selectedId ?? 0)"
+                   class="btn btn-light btn-sm d-flex align-items-center">
+                    <i class="bi bi-plus-circle-fill me-1"></i> Thêm nhắc việc
+                </a>
+            }
         </div>
-    }
-    
-</form>
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Ngày</th>
-            <th>Nội dung</th>
-            <th>Deadline</th>
-            <th>Kết quả</th>
-            <th>Ghi chú</th>
-            <th>Đánh giá</th>
-            <th>Tài liệu</th>
-            <th>Hành động</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var h in Model)
+        @if (isAdmin)
         {
-            var overdue = h.Reminder.HasValue
-            && h.Reminder.Value < DateTime.Now
-            && string.IsNullOrEmpty(h.Result);
-            <tr class="@(overdue ? "table-danger" : "")">
-                <td>@h.Date.ToString("dd/MM/yyyy")</td>
-                <td>@h.Content</td>
-                <td>@(h.Reminder?.ToString("dd/MM/yyyy") ?? "-")</td>
-                <td>@(string.IsNullOrEmpty(h.Result) ? "-" : h.Result)</td>
-                <td>@(string.IsNullOrEmpty(h.Notes) ? "-" : h.Notes)</td>
-                <td>@(string.IsNullOrEmpty(h.Rating) ? "-" : h.Rating)</td>
-                <td>
-                    @if (!string.IsNullOrEmpty(h.DocumentName))
-                    {
-                        <a asp-action="Download" asp-route-id="@h.Id">@h.DocumentName</a>
-                    }
-                    else
-                    {
-                        <span class="text-muted">Không có</span>
-                    }
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@h.Id" class="btn btn-sm btn-info">Chi tiết</a>
-                    <a asp-action="Edit" asp-route-id="@h.Id" class="btn btn-sm btn-warning">Sửa</a>
-                    <form asp-action="Delete" asp-route-id="@h.Id" method="post" class="d-inline"
-                          onsubmit="return confirm('Xác nhận xóa?');">
-                        <button class="btn btn-sm btn-danger">Xóa</button>
-                    </form>
-                </td>
-            </tr>
+            <div class="card-body border-bottom">
+                <form method="get" class="row gx-3 gy-2 align-items-end">
+                    <div class="col-md-4 form-floating mb-0">
+                        <select name="enterpriseId"
+                                asp-items="enterprises"
+                                class="form-select"
+                                onchange="this.form.submit()">
+                            <option value="">-- Tất cả doanh nghiệp --</option>
+                        </select>
+                        <label>Chọn doanh nghiệp</label>
+                    </div>
+                </form>
+            </div>
         }
-    </tbody>
-</table>
+
+        <div class="table-responsive">
+            <table class="table-modern table table-borderless table-hover mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Nội dung</th>
+                        <th>Deadline</th>
+                        <th>Kết quả</th>
+                        <th>Ghi chú</th>
+                        <th>Đánh giá</th>
+                        <th>Tài liệu</th>
+                        <th class="text-end">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var h in Model)
+                    {
+                        var overdue = h.Reminder.HasValue
+                        && h.Reminder.Value < DateTime.Now
+                        && string.IsNullOrEmpty(h.Result);
+
+                        <tr class="@(overdue ? "table-danger" : "")">
+                            <td>@h.Date.ToString("dd/MM/yyyy")</td>
+                            <td>@h.Content</td>
+                            <td>@(h.Reminder?.ToString("dd/MM/yyyy") ?? "-")</td>
+                            <td>@(string.IsNullOrEmpty(h.Result) ? "-" : h.Result)</td>
+                            <td>@(string.IsNullOrEmpty(h.Notes) ? "-" : h.Notes)</td>
+                            <td>@(string.IsNullOrEmpty(h.Rating) ? "-" : h.Rating)</td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(h.DocumentName))
+                                {
+                                    <a asp-action="Download"
+                                       asp-route-id="@h.Id"
+                                       class="text-decoration-none">
+                                        <i class="bi bi-file-earmark-pdf-fill text-secondary me-1"></i>
+                                        @h.DocumentName
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">–</span>
+                                }
+                            </td>
+                            <td class="text-end">
+                                <a asp-action="Details"
+                                   asp-route-id="@h.Id"
+                                   class="btn btn-sm btn-outline-info me-1">
+                                    <i class="bi bi-eye-fill"></i>
+                                </a>
+                                <a asp-action="Edit"
+                                   asp-route-id="@h.Id"
+                                   class="btn btn-sm btn-outline-warning me-1">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <form asp-action="Delete"
+                                      asp-route-id="@h.Id"
+                                      method="post"
+                                      class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit"
+                                            class="btn btn-sm btn-outline-danger"
+                                            onclick="return confirm('Xác nhận xóa?');">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -2,46 +2,87 @@
 @{
     ViewData["Title"] = "Dashboard";
 }
-<h2>@ViewData["Title"]</h2>
+<div class="container py-5">
+    <h1 class="mb-4">Dashboard</h1>
 
-<div class="row mb-4">
-    <div class="col">
-        <div class="card">
-            <div class="card-body">
-                Tổng DN: <strong>@Model.Total</strong>
+    <!-- Stat cards -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card-modern text-white bg-gradient-primary p-3">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-people-fill fs-1 me-3"></i>
+                    <div>
+                        <small class="text-white-50">Tổng DN</small>
+                        <h2 class="mb-0">@Model.Total</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card-modern text-white bg-gradient-success p-3">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill fs-1 me-3"></i>
+                    <div>
+                        <small class="text-white-50">Hoạt động</small>
+                        <h2 class="mb-0">@Model.Active</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card-modern text-white bg-gradient-warning p-3">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-x-circle-fill fs-1 me-3"></i>
+                    <div>
+                        <small class="text-white-50">Không hoạt động</small>
+                        <h2 class="mb-0">@Model.Inactive</h2>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col">
-        <div class="card">
-            <div class="card-body">
-                Hoạt động: <strong>@Model.Active</strong>
-            </div>
+
+    <!-- New enterprises -->
+    <div class="card card-modern mb-5">
+        <div class="card-header bg-white border-0">
+            <h5 class="mb-0">Doanh nghiệp mới nhất</h5>
         </div>
-    </div>
-    <div class="col">
-        <div class="card">
-            <div class="card-body">
-                Không hoạt động: <strong>@Model.Inactive</strong>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table-modern table table-borderless mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>#</th>
+                            <th>MST</th>
+                            <th>Tên</th>
+                            <th>Cán bộ</th>
+                            <th class="text-end">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Enterprises.Count; i++)
+                        {
+                            var e = Model.Enterprises[i];
+                            <tr>
+                                <td>@(i + 1)</td>
+                                <td>@e.TaxCode</td>
+                                <td>@e.TaxPayerName</td>
+                                <td>@e.ManagerName</td>
+                                <td class="text-end">
+                                    <a asp-controller="Enterprises"
+                                       asp-action="Details"
+                                       asp-route-id="@e.Id"
+                                       class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-eye-fill"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
-
-<h3>DN mới nhất</h3>
-<table class="table table-striped">
-    <thead>
-        <tr><th>MST</th><th>Tên</th><th>Cán bộ</th><th></th></tr>
-    </thead>
-    <tbody>
-        @foreach (var e in Model.Enterprises)
-        {
-            <tr>
-                <td>@e.TaxCode</td>
-                <td>@e.TaxPayerName</td>
-                <td>@e.Manager?.Name</td>
-                <td><a asp-controller="Enterprises" asp-action="Details" asp-route-id="@e.Id">Chi tiết</a></td>
-            </tr>
-        }
-    </tbody>
-</table>

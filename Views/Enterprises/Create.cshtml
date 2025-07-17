@@ -4,202 +4,180 @@
 @{
     ViewData["Title"] = "Thêm mới doanh nghiệp";
     var managers = ViewBag.Managers as SelectList;
+    var statuses = ViewBag.Statuses as SelectList;
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="container py-4">
+    <div class="card-modern shadow-sm mb-5">
+        <div class="card-header bg-gradient-primary text-white d-flex align-items-center">
+            <i class="bi bi-building-fill fs-2 me-2"></i>
+            <h4 class="mb-0">@ViewData["Title"]</h4>
+        </div>
+        <div class="card-body">
+            @* Alert từ TempData *@
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">@TempData["Error"]</div>
+            }
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">@TempData["Success"]</div>
+            }
 
-@* Hiển thị TempData nếu có *@
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger">
-        @TempData["Error"]
-    </div>
-}
-@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success">
-        @TempData["Success"]
-    </div>
-}
+            <form asp-action="Create" method="post" novalidate>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
 
-<form asp-action="Create" method="post" class="row g-3">
-    @* Ví dụ với một field bắt buộc: TaxAgencyCode *@
-    <div class="col-md-6">
-        <label asp-for="TaxAgencyCode" class="form-label">
-            Mã cơ quan thuế <span class="text-danger">*</span>
-        </label>
-        <input asp-for="TaxAgencyCode" class="form-control" />
-        <span asp-validation-for="TaxAgencyCode" class="text-danger"></span>
-    </div>
+                <div class="row g-3">
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="TaxAgencyCode" class="form-control" placeholder="Mã cơ quan thuế" />
+                        <label asp-for="TaxAgencyCode">Mã cơ quan thuế *</label>
+                        <span asp-validation-for="TaxAgencyCode" class="text-danger small"></span>
+                    </div>
 
-    @* Tất cả các field đánh dấu * đỏ nếu [Required] *@
-    <div class="col-md-6">
-        <label asp-for="TaxAgencyName" class="form-label">
-            Tên cơ quan thuế <span class="text-danger">*</span>
-        </label>
-        <input asp-for="TaxAgencyName" class="form-control" />
-        <span asp-validation-for="TaxAgencyName" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="TaxAgencyName" class="form-control" placeholder="Tên cơ quan thuế" />
+                        <label asp-for="TaxAgencyName">Tên cơ quan thuế *</label>
+                        <span asp-validation-for="TaxAgencyName" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="TaxPayer" class="form-label">
-            Người nộp thuế <span class="text-danger">*</span>
-        </label>
-        <input asp-for="TaxPayer" class="form-control" />
-        <span asp-validation-for="TaxPayer" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="TaxPayer" class="form-control" placeholder="Người nộp thuế" />
+                        <label asp-for="TaxPayer">Người nộp thuế *</label>
+                        <span asp-validation-for="TaxPayer" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="TaxCode" class="form-label">
-            Mã số thuế <span class="text-danger">*</span>
-        </label>
-        <input asp-for="TaxCode" class="form-control" />
-        <span asp-validation-for="TaxCode" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="TaxCode" class="form-control" placeholder="Mã số thuế" />
+                        <label asp-for="TaxCode">Mã số thuế *</label>
+                        <span asp-validation-for="TaxCode" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="TaxPayerName" class="form-label">
-            Tên doanh nghiệp <span class="text-danger">*</span>
-        </label>
-        <input asp-for="TaxPayerName" class="form-control" />
-        <span asp-validation-for="TaxPayerName" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="TaxPayerName" class="form-control" placeholder="Tên doanh nghiệp" />
+                        <label asp-for="TaxPayerName">Tên doanh nghiệp *</label>
+                        <span asp-validation-for="TaxPayerName" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="ManagementDept" class="form-label">
-            Phòng quản lý <span class="text-danger">*</span>
-        </label>
-        <input asp-for="ManagementDept" class="form-control" />
-        <span asp-validation-for="ManagementDept" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="ManagementDept" class="form-control" placeholder="Phòng quản lý" />
+                        <label asp-for="ManagementDept">Phòng quản lý *</label>
+                        <span asp-validation-for="ManagementDept" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="ManagerName" class="form-label">
-            Tên cán bộ quản lý (ghi trên chứng từ) <span class="text-danger">*</span>
-        </label>
-        <input asp-for="ManagerName" class="form-control" />
-        <span asp-validation-for="ManagerName" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="ManagerName" class="form-control" placeholder="Tên cán bộ quản lý" />
+                        <label asp-for="ManagerName">Tên cán bộ quản lý *</label>
+                        <span asp-validation-for="ManagerName" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="MainBusinessCode" class="form-label">
-            Mã ngành nghề chính <span class="text-danger">*</span>
-        </label>
-        <input asp-for="MainBusinessCode" class="form-control" />
-        <span asp-validation-for="MainBusinessCode" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="MainBusinessCode" class="form-control" placeholder="Mã ngành nghề chính" />
+                        <label asp-for="MainBusinessCode">Mã ngành nghề chính *</label>
+                        <span asp-validation-for="MainBusinessCode" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="MainBusinessName" class="form-label">
-            Ngành nghề chính <span class="text-danger">*</span>
-        </label>
-        <input asp-for="MainBusinessName" class="form-control" />
-        <span asp-validation-for="MainBusinessName" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="MainBusinessName" class="form-control" placeholder="Ngành nghề chính" />
+                        <label asp-for="MainBusinessName">Ngành nghề chính *</label>
+                        <span asp-validation-for="MainBusinessName" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-12">
-        <label asp-for="BusinessDescription" class="form-label">
-            Mô tả hoạt động kinh doanh <span class="text-danger">*</span>
-        </label>
-        <textarea asp-for="BusinessDescription" class="form-control" rows="3"></textarea>
-        <span asp-validation-for="BusinessDescription" class="text-danger"></span>
-    </div>
+                    <div class="col-12 form-floating">
+                        <textarea asp-for="BusinessDescription"
+                                  class="form-control"
+                                  placeholder="Mô tả hoạt động kinh doanh"
+                                  style="height:100px"></textarea>
+                        <label asp-for="BusinessDescription">Mô tả hoạt động kinh doanh *</label>
+                        <span asp-validation-for="BusinessDescription" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="DirectorName" class="form-label">
-            Tên Giám đốc <span class="text-danger">*</span>
-        </label>
-        <input asp-for="DirectorName" class="form-control" />
-        <span asp-validation-for="DirectorName" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="DirectorName" class="form-control" placeholder="Tên Giám đốc" />
+                        <label asp-for="DirectorName">Tên Giám đốc *</label>
+                        <span asp-validation-for="DirectorName" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="DirectorPhone" class="form-label">
-            Số điện thoại Giám đốc <span class="text-danger">*</span>
-        </label>
-        <input asp-for="DirectorPhone" class="form-control" />
-        <span asp-validation-for="DirectorPhone" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="DirectorPhone" class="form-control" placeholder="SĐT Giám đốc" />
+                        <label asp-for="DirectorPhone">Số điện thoại Giám đốc *</label>
+                        <span asp-validation-for="DirectorPhone" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="ChiefAccountant" class="form-label">
-            Tên Kế toán trưởng <span class="text-danger">*</span>
-        </label>
-        <input asp-for="ChiefAccountant" class="form-control" />
-        <span asp-validation-for="ChiefAccountant" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="ChiefAccountant" class="form-control" placeholder="Tên Kế toán trưởng" />
+                        <label asp-for="ChiefAccountant">Tên Kế toán trưởng *</label>
+                        <span asp-validation-for="ChiefAccountant" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="ChiefAccountantPhone" class="form-label">
-            Số điện thoại Kế toán trưởng <span class="text-danger">*</span>
-        </label>
-        <input asp-for="ChiefAccountantPhone" class="form-control" />
-        <span asp-validation-for="ChiefAccountantPhone" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="ChiefAccountantPhone" class="form-control" placeholder="SĐT Kế toán trưởng" />
+                        <label asp-for="ChiefAccountantPhone">Số điện thoại Kế toán trưởng *</label>
+                        <span asp-validation-for="ChiefAccountantPhone" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="DocumentNumber" class="form-label">
-            Số chứng từ <span class="text-danger">*</span>
-        </label>
-        <input asp-for="DocumentNumber" class="form-control" />
-        <span asp-validation-for="DocumentNumber" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="DocumentNumber" class="form-control" placeholder="Số chứng từ" />
+                        <label asp-for="DocumentNumber">Số chứng từ *</label>
+                        <span asp-validation-for="DocumentNumber" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="DocumentDate" class="form-label">
-            Ngày chứng từ <span class="text-danger">*</span>
-        </label>
-        <input asp-for="DocumentDate" type="date" class="form-control" />
-        <span asp-validation-for="DocumentDate" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="DocumentDate" type="date" class="form-control" placeholder="Ngày chứng từ" />
+                        <label asp-for="DocumentDate">Ngày chứng từ *</label>
+                        <span asp-validation-for="DocumentDate" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="DocumentType" class="form-label">
-            Loại chứng từ <span class="text-danger">*</span>
-        </label>
-        <input asp-for="DocumentType" class="form-control" />
-        <span asp-validation-for="DocumentType" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="DocumentType" class="form-control" placeholder="Loại chứng từ" />
+                        <label asp-for="DocumentType">Loại chứng từ *</label>
+                        <span asp-validation-for="DocumentType" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="Email" class="form-label">
-            Email doanh nghiệp <span class="text-danger">*</span>
-        </label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <input asp-for="Email" class="form-control" placeholder="Email doanh nghiệp" />
+                        <label asp-for="Email">Email doanh nghiệp *</label>
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="ManagerId" class="form-label">
-            Cán bộ phụ trách <span class="text-danger">*</span>
-        </label>
-        <select asp-for="ManagerId"
-                class="form-select"
-                asp-items="managers"
-                asp-option-label="-- Chọn cán bộ --">
-        </select>
-        <span asp-validation-for="ManagerId" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <select asp-for="ManagerId" class="form-select" asp-items="managers">
+                            <option value="">Chọn cán bộ</option>
+                        </select>
+                        <label asp-for="ManagerId">Cán bộ phụ trách *</label>
+                        <span asp-validation-for="ManagerId" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-md-6">
-        <label asp-for="Status" class="form-label">
-            Trạng thái <span class="text-danger">*</span>
-        </label>
-        <input asp-for="Status" class="form-control" />
-        <span asp-validation-for="Status" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6 form-floating">
+                        <select asp-for="Status" class="form-select" asp-items="statuses">
+                            <option value="">Chọn trạng thái</option>
+                        </select>
+                        <label asp-for="Status">Trạng thái *</label>
+                        <span asp-validation-for="Status" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-12">
-        <label asp-for="Notes" class="form-label">Ghi chú</label>
-        <textarea asp-for="Notes" class="form-control" rows="2"></textarea>
-        <span asp-validation-for="Notes" class="text-danger"></span>
-    </div>
+                    <div class="col-12 form-floating">
+                        <textarea asp-for="Notes"
+                                  class="form-control"
+                                  placeholder="Ghi chú nếu có"
+                                  style="height:80px"></textarea>
+                        <label asp-for="Notes">Ghi chú</label>
+                        <span asp-validation-for="Notes" class="text-danger small"></span>
+                    </div>
 
-    <div class="col-12">
-        <button type="submit" class="btn btn-success">Lưu</button>
-        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+                    <div class="col-12 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success me-2">
+                            <i class="bi bi-save-fill me-1"></i> Lưu
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="bi bi-x-circle-fill me-1"></i> Hủy
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</form>
+</div>
 
 @section Scripts {
     @{

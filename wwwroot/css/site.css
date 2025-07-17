@@ -20,3 +20,56 @@ html {
 body {
   margin-bottom: 60px;
 }
+/* gradient backgrounds cho các card thống kê */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+}
+
+/* bo góc hơn và shadow “dày” hơn */
+.card-modern {
+    border-radius: 1rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* hover effect cho dòng table */
+.table-modern tbody tr:hover {
+    background-color: rgba(37, 117, 252, 0.1);
+    transition: background-color 0.2s;
+}
+.card-modern {
+    border-radius: 1rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.table-modern tbody tr:hover {
+    background-color: rgba(37, 117, 252, 0.05);
+    transition: background-color 0.2s;
+}
+.login-page {
+    background: url('eTax.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.card-modern {
+    border-radius: 1rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.1);
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg,#6a11cb,#2575fc);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg,#11998e,#38ef7d);
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(135deg,#f7971e,#ffd200);
+}

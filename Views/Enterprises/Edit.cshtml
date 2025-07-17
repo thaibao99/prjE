@@ -10,7 +10,8 @@
 
 <form asp-action="Edit" method="post" class="row g-3">
     <input type="hidden" asp-for="Id" />
-
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
     <!-- Mã cơ quan thuế -->
     <div class="col-md-6">
         <label asp-for="TaxAgencyCode" class="form-label">
@@ -181,10 +182,13 @@
         <label asp-for="Status" class="form-label">
             Trạng thái <span class="text-danger">*</span>
         </label>
-        <input asp-for="Status" class="form-control" />
+        <select asp-for="Status"
+                class="form-select"
+                asp-items="ViewBag.Statuses">
+            <option value="">-- Chọn trạng thái --</option>
+        </select>
         <span asp-validation-for="Status" class="text-danger"></span>
     </div>
-
     <!-- Ghi chú không bắt buộc -->
     <div class="col-12">
         <label asp-for="Notes" class="form-label">Ghi chú</label>

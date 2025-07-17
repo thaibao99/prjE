@@ -1,25 +1,48 @@
 ﻿@model prjetax.Models.EnterpriseDemo
 @{
-    ViewData["Title"] = "Chi tiết DN";
+    ViewData["Title"] = "Chi tiết doanh nghiệp";
 }
-<h2>@ViewData["Title"]</h2>
-<dl class="row">
-    <dt class="col-sm-2">Mã thuế</dt>
-    <dd class="col-sm-10">@Model.TaxCode</dd>
-    <dt class="col-sm-2">Tên DN</dt>
-    <dd class="col-sm-10">@Model.TaxPayerName</dd>
-    <dt class="col-sm-2">Ngành chính</dt>
-    <dd class="col-sm-10">@Model.MainBusinessName</dd>
-    <dt class="col-sm-2">Cán bộ</dt>
-    <dd class="col-sm-10">@Model.Manager?.Name</dd>
-    <dt class="col-sm-2">Email</dt>
-    <dd class="col-sm-10">@Model.Email</dd>
-    <dt class="col-sm-2">Trạng thái</dt>
-    <dd class="col-sm-10">@Model.Status</dd>
-    <dt class="col-sm-2">Ghi chú</dt>
-    <dd class="col-sm-10">@Model.Notes</dd>
-</dl>
-<p>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Sửa</a>
-    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
-</p>
+
+<div class="container py-4">
+    <div class="card-modern shadow-sm">
+        <!-- Card Header -->
+        <div class="card-header bg-gradient-success text-white d-flex align-items-center">
+            <i class="bi bi-building fs-2 me-2"></i>
+            <h4 class="mb-0">@ViewData["Title"]</h4>
+        </div>
+
+        <div class="card-body">
+            <dl class="row mb-4">
+                <dt class="col-sm-3 fw-semibold">Mã thuế</dt>
+                <dd class="col-sm-9">@Model.TaxCode</dd>
+
+                <dt class="col-sm-3 fw-semibold">Tên doanh nghiệp</dt>
+                <dd class="col-sm-9">@Model.TaxPayerName</dd>
+
+                <dt class="col-sm-3 fw-semibold">Ngành nghề chính</dt>
+                <dd class="col-sm-9">@Model.MainBusinessName</dd>
+
+                <dt class="col-sm-3 fw-semibold">Cán bộ phụ trách</dt>
+                <dd class="col-sm-9">@Model.Manager?.Name</dd>
+
+                <dt class="col-sm-3 fw-semibold">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3 fw-semibold">Trạng thái</dt>
+                <dd class="col-sm-9">@Model.Status</dd>
+
+                <dt class="col-sm-3 fw-semibold">Ghi chú</dt>
+                <dd class="col-sm-9">@(!string.IsNullOrEmpty(Model.Notes) ? Model.Notes : "<span class=\"text-muted\">–</span>")</dd>
+            </dl>
+
+            <div class="d-flex justify-content-end">
+                <a asp-action="Index" class="btn btn-outline-secondary me-2">
+                    <i class="bi bi-arrow-left-circle-fill me-1"></i> Quay lại
+                </a>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success">
+                    <i class="bi bi-pencil-square me-1"></i> Chỉnh sửa
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

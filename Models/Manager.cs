@@ -22,6 +22,6 @@ namespace prjetax.Models
 
         public bool IsAdmin { get; set; }
 
-        public ICollection<EnterpriseDemo> Enterprises { get; set; }
+        public ICollection<EnterpriseDemo>? Enterprises { get; set; }
     }
 }

@@ -1,13 +1,30 @@
 ﻿@model prjetax.Models.Manager
+
 @{
     ViewData["Title"] = "Xóa nhân viên";
 }
-<h2>@ViewData["Title"]</h2>
-<div class="alert alert-warning">
-    Bạn có chắc muốn xóa <strong>@Model.Username</strong> không?
+
+<div class="container py-4">
+    <div class="card shadow-sm mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-gradient-warning text-dark d-flex align-items-center">
+            <i class="bi bi-exclamation-triangle-fill fs-2 me-2"></i>
+            <h5 class="mb-0">@ViewData["Title"]</h5>
+        </div>
+        <div class="card-body">
+            <p class="lead">
+                Bạn có chắc chắn muốn xóa nhân viên
+                <span class="fw-bold">@Model.Username</span> không?
+            </p>
+            <form asp-action="Delete" method="post" class="d-flex justify-content-end">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger me-2">
+                    <i class="bi bi-trash-fill me-1"></i> Xóa
+                </button>
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-x-circle-fill me-1"></i> Hủy
+                </a>
+            </form>
+        </div>
+    </div>
 </div>
-<form asp-action="Delete">
-    <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Xóa</button>
-    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
-</form>

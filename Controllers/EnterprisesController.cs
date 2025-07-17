@@ -68,25 +68,42 @@ namespace prjetax.Controllers
                                             .OrderBy(m => m.Name)
                                             .ToListAsync();
             ViewBag.Managers = new SelectList(allManagers, "Id", "Name");
-
+            ViewBag.Statuses = GetStatusSelectList();
             return View();
         }
 
         // POST: /Enterprises/Create
         // POST: /Enterprises/Create
+        private SelectList GetStatusSelectList(string? selected = null)
+        {
+            // Các giá trị cố định
+            var items = new[]
+            {
+        new { Value = "Hoạt động",      Text = "Hoạt động" },
+        new { Value = "Tạm nghỉ",       Text = "Tạm nghỉ" },
+        new { Value = "Dừng hoạt động", Text = "Dừng hoạt động" }
+    };
+            return new SelectList(items, "Value", "Text", selected);
+        }
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(EnterpriseDemo model)
-        {
+        {ViewBag.Statuses = GetStatusSelectList();
             // 1. Nếu validation lỗi → refill dropdown và trả về View
             if (!ModelState.IsValid)
             {
+                var errors = string.Join(" | ", ModelState.Values
+                                                .SelectMany(v => v.Errors)
+                                                .Select(e => e.ErrorMessage));
+                // log errors
+                Console.WriteLine("ModelState Errors: " + errors);
                 var allManagers = await _context.Managers
                                                 .OrderBy(m => m.Name)
                                                 .ToListAsync();
                 ViewBag.Managers = new SelectList(allManagers, "Id", "Name", model.ManagerId);
+                // Có thể thêm TempData["Error"] = "…"; để hiển thị dưới summary
+                ViewBag.Statuses = GetStatusSelectList(model.Status);
                 return View(model);
             }
-
             // 2. Map thủ công tất cả các field từ view-model sang entity
             var ent = new EnterpriseDemo
             {
@@ -119,6 +136,10 @@ namespace prjetax.Controllers
             _context.Enterprises.Add(ent);
             await _context.SaveChangesAsync();
 
+            // **Thêm dòng này** để view Create show thông báo
+            TempData["Success"] = "Thêm mới doanh nghiệp thành công.";
+
+            // Redirect về Index (hoặc nếu bạn muốn ở lại Create, thì return View())
             return RedirectToAction(nameof(Index));
         }
 
@@ -135,7 +156,7 @@ namespace prjetax.Controllers
                                             .OrderBy(m => m.Name)
                                             .ToListAsync();
             ViewBag.Managers = new SelectList(allManagers, "Id", "Name", ent.ManagerId);
-
+            ViewBag.Statuses = GetStatusSelectList();
             return View(ent);
         }
 
@@ -152,6 +173,7 @@ namespace prjetax.Controllers
                                                 .OrderBy(m => m.Name)
                                                 .ToListAsync();
                 ViewBag.Managers = new SelectList(allManagers, "Id", "Name", model.ManagerId);
+                ViewBag.Statuses = GetStatusSelectList(model.Status);
                 return View(model);
             }
 

@@ -1,27 +1,51 @@
 ﻿@{
+    Layout = "_LayoutAuth";
     ViewData["Title"] = "Đăng nhập";
 }
 
-<h2 class="mb-4">Đăng nhập</h2>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-10 col-md-6 col-lg-4">
+            <div class="card-modern shadow-sm">
+                <!-- Header -->
+                <div class="card-header bg-gradient-primary text-white text-center">
+                    <i class="bi bi-shield-lock-fill fs-1 mb-2"></i>
+                    <h4 class="mb-0">@ViewData["Title"]</h4>
+                </div>
+                <!-- Body -->
+                <div class="card-body">
+                    <form asp-action="Login" method="post" novalidate>
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
 
-<form asp-action="Login" method="post" class="w-50 mx-auto">
-    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-danger">@ViewBag.Error</div>
+                        }
 
-    @* Hiển thị lỗi nếu có *@
-    @if (ViewBag.Error != null)
-    {
-        <div class="alert alert-danger">@ViewBag.Error</div>
-    }
+                        <div class="form-floating mb-3">
+                            <input id="username"
+                                   name="username"
+                                   class="form-control"
+                                   placeholder="Tài khoản" />
+                            <label for="username">Tài khoản</label>
+                        </div>
 
-    <div class="mb-3">
-        <label for="username" class="form-label">Tài khoản</label>
-        <input id="username" name="username" class="form-control" />
+                        <div class="form-floating mb-4">
+                            <input id="password"
+                                   name="password"
+                                   type="password"
+                                   class="form-control"
+                                   placeholder="Mật khẩu" />
+                            <label for="password">Mật khẩu</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Đăng nhập
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="mb-3">
-        <label for="password" class="form-label">Mật khẩu</label>
-        <input id="password" name="password" type="password" class="form-control" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Đăng nhập</button>
-</form>
+</div>

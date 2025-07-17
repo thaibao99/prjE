@@ -4,71 +4,97 @@
 @{
     ViewData["Title"] = "Danh sách doanh nghiệp";
     var isAdmin = (ViewBag.IsAdmin as bool?) == true;
-    var search  = ViewBag.Search as string;
+    var search = ViewBag.Search as string;
+    var managers = ViewBag.Managers as SelectList;
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="container py-4">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
 
-<form asp-action="Index" method="get" class="row g-2 mb-3">
-    <div class="col-auto">
-        <input type="text"
-               name="search"
-               class="form-control"
-               placeholder="Tìm kiếm tên doanh nghiệp..."
-               value="@search" />
+    <!-- Filter Card -->
+    <div class="card-modern shadow-sm mb-4 p-3">
+        <form asp-action="Index" method="get" class="row gx-3 gy-2 align-items-end">
+            <div class="col-sm-4">
+                <label class="form-label">Tìm kiếm</label>
+                <input type="text"
+                       name="search"
+                       class="form-control"
+                       placeholder="Tên doanh nghiệp..."
+                       value="@search" />
+            </div>
+
+            @if (isAdmin && managers != null)
+            {
+                <div class="col-sm-3">
+                    <label class="form-label">Cán bộ</label>
+                    <select name="managerId"
+                            class="form-select"
+                            asp-items="managers"
+                            asp-option-label="-- Tất cả cán bộ --">
+                    </select>
+                </div>
+            }
+
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-search me-1"></i> Lọc
+                </button>
+            </div>
+            <div class="col-auto">
+                <a asp-action="Create" class="btn btn-success">
+                    <i class="bi bi-plus-circle me-1"></i> Thêm mới
+                </a>
+            </div>
+        </form>
     </div>
 
-    @if (isAdmin && ViewBag.Managers != null)
-    {
-        <div class="col-auto">
-            <select name="managerId"
-                    class="form-select"
-                    asp-items="ViewBag.Managers"
-                    asp-option-label="-- Tất cả cán bộ --">
-            </select>
+    <!-- Enterprises Table -->
+    <div class="card-modern shadow-sm">
+        <div class="table-responsive">
+            <table class="table-modern table table-borderless mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Mã thuế</th>
+                        <th>Tên doanh nghiệp</th>
+                        <th>Ngành nghề chính</th>
+                        <th>Cán bộ</th>
+                        <th>Email</th>
+                        <th class="text-end">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var e in Model)
+                    {
+                        <tr>
+                            <td>@e.TaxCode</td>
+                            <td>@e.TaxPayerName</td>
+                            <td>@e.MainBusinessName</td>
+                            <td>@e.Manager?.Name</td>
+                            <td>@e.Email</td>
+                            <td class="text-end">
+                                <a asp-action="Edit" asp-route-id="@e.Id" class="btn btn-sm btn-outline-warning me-1">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <a asp-action="Details" asp-route-id="@e.Id" class="btn btn-sm btn-outline-info me-1">
+                                    <i class="bi bi-eye-fill"></i>
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@e.Id" class="btn btn-sm btn-outline-danger me-1">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                                <a asp-controller="Mail" asp-action="SendEmail" asp-route-id="@e.Id" class="btn btn-sm btn-outline-secondary me-1">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </a>
+                                <a asp-controller="EnterpriseHistories"
+                                   asp-action="Index"
+                                   asp-route-enterpriseId="@e.Id"
+                                   class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-clock-history"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
-    }
-
-
-    <div class="col-auto">
-        <button type="submit" class="btn btn-primary">Lọc</button>
     </div>
-    <div class="col-auto">
-        <a asp-action="Create" class="btn btn-success">Thêm mới</a>
-    </div>
-</form>
-
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Mã thuế</th>
-            <th>Tên doanh nghiệp</th>
-            <th>Ngành nghề chính</th>
-            <th>Cán bộ phụ trách</th>
-            <th>Email</th>
-            <th>Hành động</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var e in Model)
-    {
-        <tr>
-            <td>@e.TaxCode</td>
-            <td>@e.TaxPayerName</td>
-            <td>@e.MainBusinessName</td>
-            <td>@e.Manager?.Name</td>      @* dùng Name, khớp với SelectList(allManagers, "Id", "Name", …) *@
-            <td>@e.Email</td>
-            <td>
-                <a asp-action="Edit"    asp-route-id="@e.Id" class="btn btn-sm btn-warning">Sửa</a>
-                <a asp-action="Details" asp-route-id="@e.Id" class="btn btn-sm btn-info">Chi tiết</a>
-                <a asp-action="Delete"  asp-route-id="@e.Id" class="btn btn-sm btn-danger">Xóa</a>
-                <a asp-controller="Mail"         asp-action="SendEmail"      asp-route-id="@e.Id" class="btn btn-sm btn-secondary">Mail</a>
-                <a asp-controller="EnterpriseHistories"
-                   asp-action="Index"
-                   asp-route-enterpriseId="@e.Id"
-                   class="btn btn-sm btn-primary">Lịch sử</a>
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
+</div>
