@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\etax-new\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\appsettings.json",
+              "RelativeDocumentMoniker": "etax-new\\appsettings.json",
+              "ToolTip": "D:\\etax-new\\etax-new\\appsettings.json",
+              "RelativeToolTip": "etax-new\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-02T10:16:22.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "etax-new\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "etax-new\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T10:14:21.413Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
