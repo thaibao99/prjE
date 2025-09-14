@@ -1,0 +1,76 @@
+﻿@model prjetax.Models.WorkItem
+@using prjetax.Models
+@{
+    ViewData["Title"] = "Sửa công việc";
+
+    // Map enum -> tiếng Việt
+    string VnStatus(WorkStatus s) => s switch
+    {
+        WorkStatus.Todo => "Chưa làm",
+        WorkStatus.Doing => "Đang làm",
+        WorkStatus.Done => "Hoàn thành",
+        WorkStatus.Blocked => "Bị chặn",
+        _ => s.ToString()
+    };
+}
+
+<h2>Sửa công việc</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Tiêu đề</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Mô tả</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Status" class="form-label">Trạng thái</label>
+        <!-- Dropdown tiếng Việt -->
+        <select asp-for="Status" class="form-control">
+            @foreach (WorkStatus st in Enum.GetValues(typeof(WorkStatus)))
+            {
+                <option value="@st" selected="@(Model.Status == st)">
+                    @VnStatus(st)
+                </option>
+            }
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DueDate" class="form-label">Hạn</label>
+        <input asp-for="DueDate" type="date" class="form-control" />
+        <span asp-validation-for="DueDate" class="text-danger"></span>
+    </div>
+
+    @if (Context.Session.GetInt32("IsAdmin") == 1)
+    {
+        <div class="mb-3">
+            <label class="form-label">Gán cho cán bộ</label>
+            <select asp-for="ManagerId" class="form-control" asp-items="ViewBag.Managers"></select>
+        </div>
+    }
+
+    <div class="mb-3">
+        <label asp-for="EnterpriseId" class="form-label">Doanh nghiệp</label>
+        <select asp-for="EnterpriseId" class="form-control" asp-items="ViewBag.Enterprises"></select>
+        <span asp-validation-for="EnterpriseId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+    <a asp-action="My" class="btn btn-secondary">Quay lại</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

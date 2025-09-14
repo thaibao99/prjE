@@ -3,8 +3,196 @@
   "WorkspaceRootPath": "D:\\etax-new\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\monitor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\monitor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\controllers\\monitorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\controllers\\monitorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\models\\workmonitorvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\models\\workmonitorvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\workitems\\my.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\workitems\\my.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\models\\workitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\models\\workitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\controllers\\workitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\controllers\\workitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\worklogs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\worklogs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\workitems\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\workitems\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\controllers\\managerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\controllers\\managerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\controllers\\worklogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\controllers\\worklogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\services\\reminderworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\services\\reminderworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\models\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\models\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\models\\worklog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\models\\worklog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\worklogs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\worklogs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\workitems\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\workitems\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\models\\sendemailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\models\\sendemailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\models\\smtpsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\models\\smtpsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\views\\mail\\sendemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\views\\mail\\sendemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\controllers\\mailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\controllers\\mailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|d:\\etax-new\\etax-new\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B201CC11-4DB7-42F8-BAE8-9E0A733AE3C5}|etax-new\\PrjEtax.csproj|solutionrelative:etax-new\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +202,622 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\Monitor\\Index.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\Monitor\\Index.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\Monitor\\Index.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\Monitor\\Index.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAUwIMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-14T19:03:46.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MonitorController.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Controllers\\MonitorController.cs",
+              "RelativeDocumentMoniker": "etax-new\\Controllers\\MonitorController.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Controllers\\MonitorController.cs",
+              "RelativeToolTip": "etax-new\\Controllers\\MonitorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T19:02:56.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WorkMonitorVM.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Models\\WorkMonitorVM.cs",
+              "RelativeDocumentMoniker": "etax-new\\Models\\WorkMonitorVM.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Models\\WorkMonitorVM.cs",
+              "RelativeToolTip": "etax-new\\Models\\WorkMonitorVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T19:02:30.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "bootstrap.bundle.min.js",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAAc4gAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-14T18:20:49.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "bootstrap.bundle.js.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAACwwAIAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:48.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "additional-methods.min.js",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAApHAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-14T18:20:47.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "additional-methods.js",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+              "ViewState": "AgIAAKwCAAAAAAAAAAAAAKwCAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-14T18:20:46.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "bootstrap.bundle.js",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+              "ViewState": "AgIAADEUAAAAAAAAAAASwEcUAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-14T18:20:39.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "bootstrap-utilities.rtl.min.css.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABMAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:39.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "bootstrap-utilities.min.css.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:38.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "bootstrap-reboot.rtl.min.css.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:37.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAMwF4AAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T17:14:27.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "bootstrap.bundle.min.js.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAADDRQQAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:50.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WorkItemsController.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Controllers\\WorkItemsController.cs",
+              "RelativeDocumentMoniker": "etax-new\\Controllers\\WorkItemsController.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Controllers\\WorkItemsController.cs",
+              "RelativeToolTip": "etax-new\\Controllers\\WorkItemsController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAADwv28AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:20:22.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WorkItem.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Models\\WorkItem.cs",
+              "RelativeDocumentMoniker": "etax-new\\Models\\WorkItem.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Models\\WorkItem.cs",
+              "RelativeToolTip": "etax-new\\Models\\WorkItem.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwCcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:32:27.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "My.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\WorkItems\\My.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\WorkItems\\My.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\WorkItems\\My.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\WorkItems\\My.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC0AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T17:37:47.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "bootstrap.esm.js",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+              "ViewState": "AgIAAFMNAAAAAAAAAAAAAFMNAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-14T18:20:50.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "bootstrap.esm.min.js.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANsAIAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:52.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "bootstrap.esm.js.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAADvkgEAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:51.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "bootstrap.esm.min.js",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAACLuwAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-14T18:20:52.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "bootstrap-reboot.min.css.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:37.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "bootstrap-grid.rtl.min.css.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:36.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "bootstrap-grid.min.css.map",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+              "RelativeToolTip": "etax-new\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-14T18:20:34.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-14T18:19:24.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Manager.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Models\\Manager.cs",
+              "RelativeDocumentMoniker": "etax-new\\Models\\Manager.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Models\\Manager.cs",
+              "RelativeToolTip": "etax-new\\Models\\Manager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T14:15:16.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\WorkLogs\\Create.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\WorkLogs\\Create.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\WorkLogs\\Create.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\WorkLogs\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-14T14:09:26.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\WorkLogs\\Index.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\WorkLogs\\Index.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\WorkLogs\\Index.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\WorkLogs\\Index.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAAAUwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-14T14:09:11.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "SendEmail.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\Mail\\SendEmail.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\Mail\\SendEmail.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\Mail\\SendEmail.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\Mail\\SendEmail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T17:42:06.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\WorkItems\\Edit.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\WorkItems\\Edit.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\WorkItems\\Edit.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\WorkItems\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T17:38:22.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\WorkItems\\Create.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\WorkItems\\Create.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\WorkItems\\Create.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\WorkItems\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T17:38:03.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ManagersController.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Controllers\\ManagersController.cs",
+              "RelativeDocumentMoniker": "etax-new\\Controllers\\ManagersController.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Controllers\\ManagersController.cs",
+              "RelativeToolTip": "etax-new\\Controllers\\ManagersController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAMwFUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T15:43:15.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Models\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "etax-new\\Models\\DashboardViewModel.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Models\\DashboardViewModel.cs",
+              "RelativeToolTip": "etax-new\\Models\\DashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:36:16.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "etax-new\\Controllers\\DashboardController.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "etax-new\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:34:58.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Program.cs",
+              "RelativeDocumentMoniker": "etax-new\\Program.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Program.cs",
+              "RelativeToolTip": "etax-new\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:33:52.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ReminderWorker.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Services\\ReminderWorker.cs",
+              "RelativeDocumentMoniker": "etax-new\\Services\\ReminderWorker.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Services\\ReminderWorker.cs",
+              "RelativeToolTip": "etax-new\\Services\\ReminderWorker.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAewCwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:33:34.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "WorkLogsController.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Controllers\\WorkLogsController.cs",
+              "RelativeDocumentMoniker": "etax-new\\Controllers\\WorkLogsController.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Controllers\\WorkLogsController.cs",
+              "RelativeToolTip": "etax-new\\Controllers\\WorkLogsController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA8wBMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:20:26.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "etax-new\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\etax-new\\etax-new\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "etax-new\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAgwA0BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-10T17:19:13.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "WorkLog.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Models\\WorkLog.cs",
+              "RelativeDocumentMoniker": "etax-new\\Models\\WorkLog.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Models\\WorkLog.cs",
+              "RelativeToolTip": "etax-new\\Models\\WorkLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:44:37.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T17:43:18.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "etax-new\\Models\\AppDbContext.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "etax-new\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAIwC8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:33:05.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "etax-new\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\etax-new\\etax-new\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "etax-new\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T17:53:20.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "SmtpSettings.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Models\\SmtpSettings.cs",
+              "RelativeDocumentMoniker": "etax-new\\Models\\SmtpSettings.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Models\\SmtpSettings.cs",
+              "RelativeToolTip": "etax-new\\Models\\SmtpSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:43:04.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "SendEmailViewModel.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Models\\SendEmailViewModel.cs",
+              "RelativeDocumentMoniker": "etax-new\\Models\\SendEmailViewModel.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Models\\SendEmailViewModel.cs",
+              "RelativeToolTip": "etax-new\\Models\\SendEmailViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:43:05.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "etax-new\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "etax-new\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:32:39.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "MailController.cs",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\Controllers\\MailController.cs",
+              "RelativeDocumentMoniker": "etax-new\\Controllers\\MailController.cs",
+              "ToolTip": "D:\\etax-new\\etax-new\\Controllers\\MailController.cs",
+              "RelativeToolTip": "etax-new\\Controllers\\MailController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:35:41.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "etax-new\\appsettings.Development.json",
+              "ToolTip": "D:\\etax-new\\etax-new\\appsettings.Development.json",
+              "RelativeToolTip": "etax-new\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-10T17:53:20.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\etax-new\\etax-new\\appsettings.json",
+              "RelativeDocumentMoniker": "etax-new\\appsettings.json",
+              "ToolTip": "D:\\etax-new\\etax-new\\appsettings.json",
+              "RelativeToolTip": "etax-new\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAB5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-02T10:16:22.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\etax-new\\etax-new\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "etax-new\\Controllers\\AccountController.cs",
               "ToolTip": "D:\\etax-new\\etax-new\\Controllers\\AccountController.cs",
               "RelativeToolTip": "etax-new\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAIA3wBYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T10:14:21.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T10:14:21.413Z"
             }
           ]
         }

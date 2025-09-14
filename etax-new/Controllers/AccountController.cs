@@ -20,6 +20,7 @@ namespace prjetax.Controllers
 
         // POST: /Account/Login
         [HttpPost, ValidateAntiForgeryToken]
+         
         public async Task<IActionResult> Login(string username, string password)
         {
             var user = await _context.Managers
@@ -29,6 +30,8 @@ namespace prjetax.Controllers
             {
                 HttpContext.Session.SetInt32("ManagerId", user.Id);
                 HttpContext.Session.SetInt32("IsAdmin", user.IsAdmin ? 1 : 0);
+                HttpContext.Session.SetString("ManagerName", user.Name ?? user.Username);   // <-- thêm
+                HttpContext.Session.SetString("UnitCode", "TXU-KV1");                       // <-- nếu có đơn vị, tạm set
                 return RedirectToAction("Index", "Dashboard");
             }
 
@@ -42,5 +45,6 @@ namespace prjetax.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
+        
     }
 }

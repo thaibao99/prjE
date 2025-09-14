@@ -22,6 +22,10 @@ namespace prjetax.Models
 
         public bool IsAdmin { get; set; }
 
+        [Required, StringLength(200)]
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
+
         public ICollection<EnterpriseDemo>? Enterprises { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 wwwroot\css\1.jpg
 wwwroot\css\eTax.jpg
 wwwroot\css\site.css
+wwwroot\css\Thue.png
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css

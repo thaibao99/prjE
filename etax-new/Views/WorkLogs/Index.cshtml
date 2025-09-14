@@ -1,0 +1,68 @@
+﻿@model IEnumerable<prjetax.Models.WorkLog>
+@using prjetax.Models
+@{
+    var wi = ViewBag.WorkItem as WorkItem;
+    ViewData["Title"] = "Nhật ký công việc";
+}
+
+<h3 class="mb-3">Nhật ký: @wi?.Title</h3>
+
+<div class="mb-3">
+    <a asp-action="Create" asp-route-workItemId="@wi?.Id" class="btn btn-primary">+ Thêm nhật ký</a>
+    <a asp-controller="WorkItems" asp-action="My" class="btn btn-secondary">Quay lại</a>
+</div>
+
+@if (ViewBag.DueSoon != null && ((IEnumerable<WorkItem>)ViewBag.DueSoon).Any())
+{
+    <div class="alert alert-warning">
+        <strong>Nhắc trước 2 ngày:</strong>
+        <ul class="mb-0">
+            @foreach (var w in (IEnumerable<WorkItem>)ViewBag.DueSoon)
+            {
+                <li>@w.Title (hạn @w.DueDate?.ToString("dd/MM/yyyy"))</li>
+            }
+        </ul>
+    </div>
+}
+
+@if (ViewBag.OverdueList != null && ((IEnumerable<WorkItem>)ViewBag.OverdueList).Any())
+{
+    <div class="alert alert-danger">
+        <strong>Quá hạn:</strong>
+        <ul class="mb-0">
+            @foreach (var w in (IEnumerable<WorkItem>)ViewBag.OverdueList)
+            {
+                <li>@w.Title (hạn @w.DueDate?.ToString("dd/MM/yyyy"))</li>
+            }
+        </ul>
+    </div>
+}
+
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+            <th style="width:180px">Thời gian</th>
+            <th>Nội dung</th>
+            <th style="width:260px">Kết quả</th>
+            <th style="width:120px">Đính kèm</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.At.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@log.Content</td>
+                <td>@log.Result</td>
+                <td>
+                    @if (log.Attachment != null)
+                    {
+                        <a asp-action="Download" asp-route-id="@log.Id" class="btn btn-sm btn-outline-primary">
+                            Tải file
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@model prjetax.Models.WorkLog
+@{
+    ViewData["Title"] = "Thêm nhật ký";
+}
+
+<h3>Thêm nhật ký</h3>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="WorkItemId" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Content" class="form-label">Nội dung</label>
+        <textarea asp-for="Content" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Result" class="form-label">Kết quả</label>
+        <input asp-for="Result" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Đính kèm (PDF/JPG/PNG…)</label>
+        <input type="file" name="attachment" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Lưu</button>
+    <a asp-action="Index" asp-route-workItemId="@Model.WorkItemId" class="btn btn-secondary">Quay lại</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

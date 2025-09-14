@@ -1,0 +1,58 @@
+﻿@model prjetax.Models.WorkItem
+@{
+    ViewData["Title"] = "Thêm công việc";
+    var isAdmin = Context.Session.GetInt32("IsAdmin") == 1;
+}
+
+<h2>Thêm công việc</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Status" class="form-label"></label>
+        <select asp-for="Status" class="form-control"
+                asp-items="Html.GetEnumSelectList<prjetax.Models.WorkStatus>()"></select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DueDate" class="form-label"></label>
+        <input asp-for="DueDate" type="date" class="form-control" />
+    </div>
+
+    @* Chỉ Admin mới thấy dropdown gán người thực hiện *@
+    @if (isAdmin)
+    {
+        <div class="mb-3">
+            <label class="form-label">Gán cho cán bộ</label>
+            <select asp-for="ManagerId" class="form-control" asp-items="ViewBag.Managers"></select>
+        </div>
+    }
+
+    <div class="mb-3">
+        <label asp-for="EnterpriseId" class="form-label"></label>
+        <select asp-for="EnterpriseId" class="form-control" asp-items="ViewBag.Enterprises">
+            <option value="">-- Không chọn --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Lưu</button>
+    <a asp-action="My" class="btn btn-secondary">Quay lại</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

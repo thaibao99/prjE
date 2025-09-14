@@ -1,0 +1,160 @@
+﻿@model prjetax.Models.WorkMonitorVM
+@using prjetax.Models
+@{
+    ViewData["Title"] = "Giám sát tiến độ";
+    var today = DateTime.Today;
+
+    string VnStatus(WorkStatus s) => s switch
+    {
+        WorkStatus.Todo => "Chưa làm",
+        WorkStatus.Doing => "Đang làm",
+        WorkStatus.Done => "Hoàn thành",
+        WorkStatus.Blocked => "Bị chặn",
+        _ => s.ToString()
+    };
+
+    string Badge(WorkStatus s) => s switch
+    {
+        WorkStatus.Todo => "badge rounded-pill text-bg-secondary",
+        WorkStatus.Doing => "badge rounded-pill text-bg-primary",
+        WorkStatus.Done => "badge rounded-pill text-bg-success",
+        WorkStatus.Blocked => "badge rounded-pill text-bg-warning text-dark",
+        _ => "badge rounded-pill text-bg-light"
+    };
+}
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header border-0 text-white fw-semibold d-flex align-items-center justify-content-between gradient-header">
+        <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-graph-up-arrow"></i>
+            <span>@ViewData["Title"]</span>
+        </div>
+
+        <form method="get" class="d-flex gap-2">
+            <input class="form-control form-control-sm" name="q" value="@Model.Q" placeholder="Tìm tiêu đề..." />
+
+            <select name="s" class="form-select form-select-sm">
+                <option value="">-- Tất cả trạng thái --</option>
+                @foreach (WorkStatus st in Enum.GetValues(typeof(WorkStatus)))
+                {
+                    <option value="@st" selected="@(Model.S == st)">@VnStatus(st)</option>
+                }
+            </select>
+
+            <select name="managerId" class="form-select form-select-sm" asp-items="ViewBag.Managers">
+                <option value="">-- Tất cả cán bộ --</option>
+            </select>
+
+            <select name="enterpriseId" class="form-select form-select-sm" asp-items="ViewBag.Enterprises">
+                <option value="">-- Tất cả DN --</option>
+            </select>
+
+            <input type="date" name="from" class="form-control form-control-sm" value="@(Model.From?.ToString("yyyy-MM-dd"))" />
+            <input type="date" name="to" class="form-control form-control-sm" value="@(Model.To?.ToString("yyyy-MM-dd"))" />
+
+            <button class="btn btn-sm btn-light text-primary fw-600"><i class="bi bi-search"></i></button>
+        </form>
+    </div>
+
+    <!-- Thống kê nhanh -->
+    <div class="row g-3 px-3 pt-3 pb-1">
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body py-2">
+                    <div class="small text-secondary">Tổng việc</div>
+                    <div class="h5 mb-0">@Model.Total</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body py-2">
+                    <div class="small text-secondary">Đang làm</div>
+                    <div class="h5 mb-0">@Model.Doing</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body py-2">
+                    <div class="small text-secondary">Hoàn thành</div>
+                    <div class="h5 mb-0">@Model.Done</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body py-2">
+                    <div class="small text-secondary">Quá hạn / T+2</div>
+                    <div class="h5 mb-0">@Model.Overdue / @Model.DueSoon</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bảng chi tiết -->
+    <div class="table-responsive px-3 pb-3">
+        <table class="table table-striped table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th style="width:28%">Tiêu đề</th>
+                    <th style="width:12%">Trạng thái</th>
+                    <th style="width:14%">Hạn</th>
+                    <th style="width:22%">Doanh nghiệp</th>
+                    <th style="width:16%">Cán bộ</th>
+                    <th class="text-end" style="width:8%">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Items.Any())
+                {
+                    <tr><td colspan="6" class="text-center text-secondary py-4">Không có dữ liệu.</td></tr>
+                }
+                else
+                {
+                    foreach (var w in Model.Items)
+                    {
+                        var overdue = w.DueDate.HasValue && w.DueDate.Value.Date < today &&
+                        (w.Status == WorkStatus.Todo || w.Status == WorkStatus.Doing);
+                        var dueSoon = w.DueDate.HasValue && w.DueDate.Value.Date == today.AddDays(2) &&
+                        (w.Status == WorkStatus.Todo || w.Status == WorkStatus.Doing);
+                        var futureDone = w.Status == WorkStatus.Done && w.CompletedAt.HasValue &&
+                        w.CompletedAt.Value > DateTime.UtcNow;
+
+                        <tr class="@(overdue ? "row-overdue" : dueSoon ? "row-due-soon" : "")">
+                            <td class="fw-500">@w.Title</td>
+                            <td><span class="@Badge(w.Status)">@VnStatus(w.Status)</span></td>
+                            <td>
+                                @if (w.DueDate.HasValue)
+                                {
+                                    <span>@w.DueDate.Value.ToString("dd/MM/yyyy")</span>
+                                }
+                                @if (overdue)
+                                {
+                                    <span class="ms-2 badge rounded-pill text-bg-danger">Quá hạn</span>
+                                }
+                                else if (dueSoon)
+                                {
+
+                                    <span class="ms-2 badge rounded-pill text-bg-warning text-dark">T+2</span>
+                                }
+                                @if (futureDone)
+                                {
+                                    <span class="ms-2 badge rounded-pill text-bg-danger">Ngày hoàn thành &gt; hiện tại</span>
+                                }
+                            </td>
+                            <td>@w.Enterprise?.TaxPayerName</td>
+                            <td>@w.Manager?.Name</td>
+                            <td class="text-end">
+                                <a asp-controller="WorkLogs" asp-action="Index" asp-route-workItemId="@w.Id"
+                                   class="btn btn-sm btn-info-subtle btn-icon" title="Nhật ký">
+                                    <i class="bi bi-journal-text"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

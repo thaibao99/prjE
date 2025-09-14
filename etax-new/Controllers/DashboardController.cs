@@ -18,24 +18,45 @@ namespace prjetax.Controllers
         // GET: /Dashboard
         public async Task<IActionResult> Index()
         {
+            // ===== Thống kê Doanh nghiệp =====
             var q = _context.Enterprises.AsQueryable();
             if (!IsAdmin)
                 q = q.Where(e => e.ManagerId == ManagerId);
 
-            var total = await q.CountAsync();
+            var totalEnterprise = await q.CountAsync();
             var active = await q.CountAsync(e => e.Status == "Hoạt động");
-            var inactive = total - active;
+            var inactive = totalEnterprise - active;
+
+            // ===== Thống kê Công việc =====
+            var now = DateTime.Today;
+            var qWork = _context.WorkItems.AsNoTracking().AsQueryable();
+            if (!IsAdmin && ManagerId.HasValue)
+                qWork = qWork.Where(w => w.ManagerId == ManagerId.Value);
+
+            var totalWork = await qWork.CountAsync();
+            var doing = await qWork.CountAsync(w => w.Status == WorkStatus.Doing);
+            var overdue = await qWork.CountAsync(w =>
+                                (w.Status == WorkStatus.Todo || w.Status == WorkStatus.Doing)
+                                && w.DueDate < now);
+            var done = await qWork.CountAsync(w => w.Status == WorkStatus.Done);
 
             var vm = new DashboardViewModel
             {
-                Total = total,
+                // Doanh nghiệp
+                Total = totalEnterprise,
                 Active = active,
                 Inactive = inactive,
                 Enterprises = await q
                     .Include(e => e.Manager)
                     .OrderByDescending(e => e.Id)
                     .Take(10)
-                    .ToListAsync()
+                    .ToListAsync(),
+
+                // Công việc
+                TotalWork = totalWork,
+                Doing = doing,
+                Overdue = overdue,
+                Done = done
             };
 
             return View(vm);

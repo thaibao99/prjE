@@ -17,14 +17,14 @@ namespace prjetax.Controllers
         // GET: /Managers
         public async Task<IActionResult> Index()
         {
-            if (!IsAdmin) return Forbid();
+            if (!IsAdmin) return StatusCode(403);
             return View(await _context.Managers.ToListAsync());
         }
 
         // GET: /Managers/Create
         public IActionResult Create()
         {
-            if (!IsAdmin) return Forbid();
+            if (!IsAdmin) return StatusCode(403);
             return View();
         }
 
@@ -34,7 +34,7 @@ namespace prjetax.Controllers
         {
             try
             {
-                if (!IsAdmin) return Forbid();
+                if (!IsAdmin) return StatusCode(403);
                 if (!ModelState.IsValid) return View(manager);
 
                 _context.Managers.Add(manager);
@@ -54,7 +54,7 @@ namespace prjetax.Controllers
         // GET: /Managers/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
-            if (!IsAdmin) return Forbid();
+            if (!IsAdmin) return StatusCode(403);
             var manager = await _context.Managers.FindAsync(id);
             if (manager == null) return NotFound();
             return View(manager);
@@ -64,7 +64,7 @@ namespace prjetax.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Manager model)
         {
-            if (!IsAdmin) return Forbid();
+            if (!IsAdmin) return StatusCode(403);
             if (id != model.Id) return BadRequest();
             if (!ModelState.IsValid) return View(model);
 
@@ -83,7 +83,7 @@ namespace prjetax.Controllers
         // GET: /Managers/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
-            if (!IsAdmin) return Forbid();
+            if (!IsAdmin) return StatusCode(403);
             var manager = await _context.Managers.FindAsync(id);
             if (manager == null) return NotFound();
             return View(manager);
@@ -93,7 +93,7 @@ namespace prjetax.Controllers
         [HttpPost, ActionName("Delete"), ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (!IsAdmin) return Forbid();
+            if (!IsAdmin) return StatusCode(403);
             var manager = await _context.Managers.FindAsync(id);
             _context.Managers.Remove(manager);
             await _context.SaveChangesAsync();
