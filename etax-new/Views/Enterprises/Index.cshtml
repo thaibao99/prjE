@@ -9,7 +9,22 @@
 }
 
 <div class="container py-4">
-    <h2 class="mb-4">@ViewData["Title"]</h2>
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">@ViewData["Title"]</h2>
+
+        <div class="d-flex gap-2">
+            <!-- Tải file mẫu -->
+            <a class="btn btn-sm btn-outline-primary"
+               asp-controller="EnterprisesImport" asp-action="Template">
+                <i class="bi bi-file-earmark-arrow-down me-1"></i> Tải file mẫu
+            </a>
+
+            <!-- Nhập từ Excel (mở modal) -->
+            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#importExcelModal">
+                <i class="bi bi-upload me-1"></i> Nhập từ Excel
+            </button>
+        </div>
+    </div>
 
     <!-- Filter Card -->
     <div class="card-modern shadow-sm mb-4 p-3">
@@ -28,7 +43,6 @@
                 <div class="col-sm-3">
                     <label class="form-label">Cán bộ</label>
                     <select name="managerId" class="form-select">
-                        <!-- Dòng Tất cả cán bộ -->
                         <option value="" selected="@(ViewBag.SelectedManagerId == null ? "selected" : null)">
                             -- Tất cả cán bộ --
                         </option>
@@ -43,9 +57,6 @@
                     </select>
                 </div>
             }
-
-
-
 
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary">
@@ -107,6 +118,43 @@
                     }
                 </tbody>
             </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal nhập Excel -->
+<div class="modal fade" id="importExcelModal" tabindex="-1" aria-labelledby="importExcelModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="importExcelModalLabel">Nhập doanh nghiệp từ Excel</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-controller="EnterprisesImport" asp-action="Upload" method="post" enctype="multipart/form-data" id="frmImportExcel">
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label class="form-label">Chọn file (.xlsx)</label>
+                        <input type="file" name="file" class="form-control" accept=".xlsx" required />
+                        <div class="form-text">
+                            Cột yêu cầu: TaxAgencyCode, TaxAgencyName, TaxPayer, TaxCode, TaxPayerName, ManagementDept,
+                            ManagerName, MainBusinessCode, MainBusinessName, BusinessDescription, DirectorName, DirectorPhone,
+                            ChiefAccountant, ChiefAccountantPhone, DocumentNumber, DocumentDate (yyyy-MM-dd), DocumentType,
+                            Email, ManagerId, Status, Notes
+                        </div>
+                    </div>
+                </form>
+                <div class="alert alert-info small mb-0">
+                    <strong>Quy tắc trùng:</strong> theo <em>TaxCode</em>. Nếu trùng, hệ thống sẽ hiện danh sách “Doanh nghiệp đã có thông tin”
+                    để bạn chọn <em>Ghi đè</em> hoặc <em>Hủy</em>, đồng thời xuất báo cáo Excel 2 dòng liền nhau (Trước/Sau) và highlight khác biệt.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Đóng</button>
+                <button class="btn btn-primary btn-sm" onclick="document.getElementById('frmImportExcel').submit();">
+                    Tiếp tục &amp; xem trước
+                </button>
+            </div>
         </div>
     </div>
 </div>

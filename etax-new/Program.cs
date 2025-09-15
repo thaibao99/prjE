@@ -13,6 +13,7 @@ builder.Services.AddSession(opt =>
     opt.Cookie.IsEssential = true;
     opt.IdleTimeout = TimeSpan.FromMinutes(30);
 });
+builder.Services.AddTransient<prjetax.Services.EnterpriseExcelService>();
 
 // Background worker nhắc việc
 builder.Services.AddHostedService<ReminderWorker>();
