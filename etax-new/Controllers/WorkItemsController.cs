@@ -20,16 +20,31 @@ public class WorkItemsController : Controller
 
         var query = _db.WorkItems
             .Include(w => w.Enterprise)
-            .Include(w => w.Manager)   // <-- thêm
+            .Include(w => w.Manager)
+            .AsNoTracking()                           // đọc-only nhanh hơn
             .AsQueryable();
 
         if (!IsAdmin) query = query.Where(w => w.ManagerId == me);
-        if (!string.IsNullOrWhiteSpace(q)) query = query.Where(w => w.Title.Contains(q));
+
+        if (!string.IsNullOrWhiteSpace(q))
+        {
+            var k = q.Trim();
+            query = query.Where(w =>
+                EF.Functions.Like(w.Title, $"%{k}%") ||
+                EF.Functions.Like(w.Enterprise.TaxCode, $"%{k}%") ||
+                EF.Functions.Like(w.Enterprise.TaxPayerName, $"%{k}%")
+            );
+        }
+
         if (s.HasValue) query = query.Where(w => w.Status == s);
 
-        var items = await query.OrderBy(w => w.DueDate ?? DateTime.MaxValue).ToListAsync();
+        var items = await query
+            .OrderBy(w => w.DueDate ?? DateTime.MaxValue)
+            .ToListAsync();
+
         return View(items);
     }
+
 
     public IActionResult Create()
     {

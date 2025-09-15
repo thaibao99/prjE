@@ -7745,23 +7745,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thaib\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\etax-new\\etax-new\\PrjEtax.csproj",
+      "projectUniqueName": "D:\\prjE\\etax-new\\PrjEtax.csproj",
       "projectName": "PrjEtax",
-      "projectPath": "D:\\etax-new\\etax-new\\PrjEtax.csproj",
-      "packagesPath": "C:\\Users\\thaib\\.nuget\\packages\\",
-      "outputPath": "D:\\etax-new\\etax-new\\obj\\",
+      "projectPath": "D:\\prjE\\etax-new\\PrjEtax.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\prjE\\etax-new\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\thaib\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7846,7 +7846,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

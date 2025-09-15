@@ -29,7 +29,14 @@ public class MonitorController : Controller
 
         // Áp bộ lọc
         if (!string.IsNullOrWhiteSpace(q))
-            qWork = qWork.Where(w => w.Title.Contains(q));
+        {
+            var k = q.Trim();
+            qWork = qWork.Where(w =>
+                EF.Functions.Like(w.Title, $"%{k}%") ||
+                EF.Functions.Like(w.Enterprise.TaxCode, $"%{k}%") ||
+                EF.Functions.Like(w.Enterprise.TaxPayerName, $"%{k}%")
+            );
+        }
         if (s.HasValue)
             qWork = qWork.Where(w => w.Status == s);
         if (managerId.HasValue)

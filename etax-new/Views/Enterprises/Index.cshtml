@@ -19,7 +19,7 @@
                 <input type="text"
                        name="search"
                        class="form-control"
-                       placeholder="Tên doanh nghiệp..."
+                       placeholder="Nhập mã số thuế doanh nghiệp..."
                        value="@search" />
             </div>
 
@@ -27,13 +27,25 @@
             {
                 <div class="col-sm-3">
                     <label class="form-label">Cán bộ</label>
-                    <select name="managerId"
-                            class="form-select"
-                            asp-items="managers"
-                            asp-option-label="-- Tất cả cán bộ --">
+                    <select name="managerId" class="form-select">
+                        <!-- Dòng Tất cả cán bộ -->
+                        <option value="" selected="@(ViewBag.SelectedManagerId == null ? "selected" : null)">
+                            -- Tất cả cán bộ --
+                        </option>
+
+                        @foreach (var item in managers)
+                        {
+                            var isSel = (ViewBag.SelectedManagerId?.ToString() == item.Value);
+                            <option value="@item.Value" selected="@(isSel ? "selected" : null)">
+                                @item.Text
+                            </option>
+                        }
                     </select>
                 </div>
             }
+
+
+
 
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary">

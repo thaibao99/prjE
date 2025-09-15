@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PrjEtax")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+918d8e084c03a69a4271b307909e9a0bb1645723")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90d8a1789c14b81338d6de966460a4b98d48be5e")]
 [assembly: System.Reflection.AssemblyProductAttribute("PrjEtax")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PrjEtax")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

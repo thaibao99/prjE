@@ -19,38 +19,48 @@ namespace prjetax.Controllers
         // GET: /Enterprises
         public async Task<IActionResult> Index(string search, int? managerId)
         {
-            // 1) Determine role & effective manager filter
+            // 1) Phân quyền & bộ lọc cán bộ hiệu lực
             bool isAdmin = HttpContext.Session.GetInt32("IsAdmin") == 1;
-            // Admin can pass in any managerId; non-admins are fixed to their own ID
+
+            // Admin: dùng tham số managerId từ query (null = tất cả)
+            // Non-admin: luôn khóa theo ManagerId trong session
             int? currentManagerId = isAdmin
                                     ? managerId
                                     : HttpContext.Session.GetInt32("ManagerId");
 
-            // 2) If admin, prepare the dropdown of all managers
-            // EnterprisesController.cs, trong Index action
+            // 2) Chuẩn bị dropdown cán bộ cho Admin
             if (isAdmin)
             {
                 var allManagers = await _context.Managers
                                                 .OrderBy(m => m.Name)
                                                 .ToListAsync();
-                // value = Id, text = Name (khớp với property), selected = managerId
-                ViewBag.Managers = new SelectList(allManagers, "Id", "Name", managerId);
+
+                // SelectList này chỉ chứa danh sách cán bộ thật
+                // Dòng "Tất cả cán bộ" sẽ render thủ công ở View (option value="")
+                ViewBag.Managers = new SelectList(allManagers, "Id", "Name");
             }
 
-
-            // 3) Store for use in the View
-            ViewBag.Search = search;
+            // 3) Đưa thông tin cho View
             ViewBag.IsAdmin = isAdmin;
-            ViewBag.SelectedManagerId = currentManagerId;
+            ViewBag.Search = search;                         // giữ từ khóa
+            ViewBag.SelectedManagerId = currentManagerId;    // để giữ lựa chọn dropdown
 
-            // 4) Build your enterprise query
+            // 4) Xây dựng truy vấn
             var q = _context.Enterprises
                             .Include(e => e.Manager)
                             .AsQueryable();
 
+            // Tìm theo MÃ SỐ THUẾ (và có thể kèm tên DN nếu muốn)
             if (!string.IsNullOrWhiteSpace(search))
-                q = q.Where(e => e.TaxPayerName.Contains(search));
+            {
+                var s = search.Trim();
+                q = q.Where(e =>
+                    EF.Functions.Like(e.TaxCode, $"%{s}%")      // mã số thuế
+                    || EF.Functions.Like(e.TaxPayerName, $"%{s}%")  // mở rộng: tên DN
+                );
+            }
 
+            // Lọc theo cán bộ nếu có (admin chọn cụ thể hoặc non-admin bị khóa)
             if (currentManagerId.HasValue)
                 q = q.Where(e => e.ManagerId == currentManagerId.Value);
 

@@ -6,28 +6,49 @@
     var isAdmin = Context.Session.GetInt32("IsAdmin") == 1;
     DateTime today = DateTime.Today;
 
-    // map trạng thái sang tiếng Việt
+    // map trạng thái -> tiếng Việt
     string VnStatus(WorkStatus s) => s switch
     {
         WorkStatus.Todo => "Chưa làm",
         WorkStatus.Doing => "Đang làm",
         WorkStatus.Done => "Hoàn thành",
-        WorkStatus.Blocked => "Bị chặn",
+        WorkStatus.Blocked => "Quá hạn",
         _ => s.ToString()
     };
 
-    string Badge(WorkStatus s) => s switch
+    // lớp màu cho badge (rõ ràng hơn)
+    string BadgeColor(WorkStatus s) => s switch
     {
-        WorkStatus.Todo => "badge rounded-pill text-bg-secondary",
-        WorkStatus.Doing => "badge rounded-pill text-bg-primary",
-        WorkStatus.Done => "badge rounded-pill text-bg-success",
-        WorkStatus.Blocked => "badge rounded-pill text-bg-warning text-dark",
-        _ => "badge rounded-pill text-bg-light"
+        WorkStatus.Todo => "bg-secondary",
+        WorkStatus.Doing => "bg-primary",
+        WorkStatus.Done => "bg-success",
+        WorkStatus.Blocked => "bg-danger",
+        _ => "bg-light text-dark"
     };
 }
 
+<style>
+    /* Badge trạng thái: to hơn, rõ hơn */
+    .status-badge {
+        font-size: .95rem; /* to hơn một chút */
+        padding: .35rem .6rem; /* dày hơn */
+        border-radius: 999px; /* pill */
+        font-weight: 600; /* đậm hơn */
+        letter-spacing: .2px;
+    }
+    /* Hàng cảnh báo */
+    .row-overdue {
+        background: #fff5f5;
+    }
+    /* quá hạn */
+    .row-due-soon {
+        background: #fffbe6;
+    }
+    /* T+2 */
+</style>
+
 <div class="card shadow-sm mb-4">
-    <!-- header gradient giống Managers -->
+    <!-- header gradient -->
     <div class="card-header border-0 text-white fw-semibold d-flex align-items-center justify-content-between gradient-header">
         <div class="d-flex align-items-center gap-2">
             <i class="bi bi-list-check"></i>
@@ -37,16 +58,14 @@
         <div class="d-flex gap-2">
             <form method="get" class="d-flex">
                 <input name="q" value="@Context.Request.Query["q"]" class="form-control form-control-sm"
-                       placeholder="Tìm tiêu đề..." />
+                       placeholder="Nhập mã số thuế">
 
                 <select name="s" class="form-select form-select-sm ms-2" style="min-width:160px">
                     <option value="">-- Tất cả trạng thái --</option>
                     @foreach (WorkStatus st in Enum.GetValues(typeof(WorkStatus)))
                     {
                         var sel = Context.Request.Query["s"] == st.ToString();
-                        <option value="@st" selected="@(sel)">
-                            @VnStatus(st)
-                        </option>
+                        <option value="@st" selected="@(sel)">@VnStatus(st)</option>
                     }
                 </select>
 
@@ -63,19 +82,20 @@
         <table class="table table-striped table-hover align-middle mb-0">
             <thead class="table-light">
                 <tr>
-                    <th style="width:28%">Tiêu đề</th>
-                    <th style="width:14%">Trạng thái</th>
-                    <th style="width:14%">Hạn</th>
-                    <th style="width:24%">Doanh nghiệp</th>
-                    <th style="width:14%">Cán bộ phụ trách</th>   @* thêm cột *@
-                    <th class="text-end" style="width:6%">Hành động</th>
+                    <th style="width:26%">Tiêu đề</th>
+                    <th style="width:12%">Trạng thái</th>
+                    <th style="width:12%">Hạn</th>
+                    <th style="width:22%">Doanh nghiệp</th>
+                    <th style="width:12%">Mã số thuế</th>     <!-- cột mới -->
+                    <th style="width:12%">Cán bộ phụ trách</th>
+                    <th class="text-end" style="width:4%">Hành động</th>
                 </tr>
             </thead>
             <tbody>
                 @if (!Model.Any())
                 {
                     <tr>
-                        <td colspan="6" class="text-center text-secondary py-4">Chưa có công việc nào.</td>
+                        <td colspan="7" class="text-center text-secondary py-4">Chưa có công việc nào.</td>
                     </tr>
                 }
                 else
@@ -90,7 +110,11 @@
                         <tr class="@(overdue ? "row-overdue" : dueSoon ? "row-due-soon" : "")">
                             <td class="fw-500">@w.Title</td>
 
-                            <td><span class="@Badge(w.Status)">@VnStatus(w.Status)</span></td>
+                            <td>
+                                <span class="status-badge text-white @BadgeColor(w.Status)">
+                                    @VnStatus(w.Status)
+                                </span>
+                            </td>
 
                             <td>
                                 @if (w.DueDate.HasValue)
@@ -108,6 +132,7 @@
                             </td>
 
                             <td>@w.Enterprise?.TaxPayerName</td>
+                            <td class="text-nowrap">@w.Enterprise?.TaxCode</td>  <!-- dữ liệu cột mới -->
                             <td>@w.Manager?.Name</td>
 
                             <td class="text-end">

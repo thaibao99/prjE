@@ -22,6 +22,27 @@
         _ => "badge rounded-pill text-bg-light"
     };
 }
+@{
+    // map màu (giống Work/My)
+    string BadgeColor(WorkStatus s) => s switch
+    {
+        WorkStatus.Todo    => "bg-secondary",
+        WorkStatus.Doing   => "bg-primary",
+        WorkStatus.Done    => "bg-success",
+        WorkStatus.Blocked => "bg-danger",
+        _ => "bg-light text-dark"
+    };
+}
+<style>
+  /* Badge trạng thái giống Work/My: to và rõ */
+  .status-badge {
+      font-size: .95rem;
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: .2px;
+  }
+</style>
 
 <div class="card shadow-sm mb-4">
     <div class="card-header border-0 text-white fw-semibold d-flex align-items-center justify-content-between gradient-header">
@@ -31,7 +52,9 @@
         </div>
 
         <form method="get" class="d-flex gap-2">
-            <input class="form-control form-control-sm" name="q" value="@Model.Q" placeholder="Tìm tiêu đề..." />
+            <input class="form-control form-control-sm" name="q" value="@Model.Q"
+                   placeholder="Tìm tiêu đề / MST / tên DN..." />
+
 
             <select name="s" class="form-select form-select-sm">
                 <option value="">-- Tất cả trạng thái --</option>
@@ -96,65 +119,61 @@
     <div class="table-responsive px-3 pb-3">
         <table class="table table-striped table-hover align-middle mb-0">
             <thead class="table-light">
-                <tr>
-                    <th style="width:28%">Tiêu đề</th>
-                    <th style="width:12%">Trạng thái</th>
-                    <th style="width:14%">Hạn</th>
-                    <th style="width:22%">Doanh nghiệp</th>
-                    <th style="width:16%">Cán bộ</th>
-                    <th class="text-end" style="width:8%">Hành động</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (!Model.Items.Any())
-                {
-                    <tr><td colspan="6" class="text-center text-secondary py-4">Không có dữ liệu.</td></tr>
-                }
-                else
-                {
-                    foreach (var w in Model.Items)
-                    {
-                        var overdue = w.DueDate.HasValue && w.DueDate.Value.Date < today &&
-                        (w.Status == WorkStatus.Todo || w.Status == WorkStatus.Doing);
-                        var dueSoon = w.DueDate.HasValue && w.DueDate.Value.Date == today.AddDays(2) &&
-                        (w.Status == WorkStatus.Todo || w.Status == WorkStatus.Doing);
-                        var futureDone = w.Status == WorkStatus.Done && w.CompletedAt.HasValue &&
-                        w.CompletedAt.Value > DateTime.UtcNow;
+    <tr>
+        <th style="width:26%">Tiêu đề</th>
+        <th style="width:12%">Trạng thái</th>
+        <th style="width:12%">Hạn</th>
+        <th style="width:22%">Doanh nghiệp</th>
+        <th style="width:12%">Mã số thuế</th>   <!-- NEW -->
+        <th style="width:12%">Cán bộ</th>
+        <th class="text-end" style="width:4%">Hành động</th>
+    </tr>
+</thead>
+<tbody>
+    @if (!Model.Items.Any())
+    {
+        <tr><td colspan="7" class="text-center text-secondary py-4">Không có dữ liệu.</td></tr>  <!-- 6 -> 7 -->
+    }
+    else
+    {
+        foreach (var w in Model.Items)
+        {
+            var overdue = w.DueDate.HasValue && w.DueDate.Value.Date < today &&
+                          (w.Status == WorkStatus.Todo || w.Status == WorkStatus.Doing);
+            var dueSoon = w.DueDate.HasValue && w.DueDate.Value.Date == today.AddDays(2) &&
+                          (w.Status == WorkStatus.Todo || w.Status == WorkStatus.Doing);
+            var futureDone = w.Status == WorkStatus.Done && w.CompletedAt.HasValue &&
+                             w.CompletedAt.Value > DateTime.UtcNow;
 
-                        <tr class="@(overdue ? "row-overdue" : dueSoon ? "row-due-soon" : "")">
-                            <td class="fw-500">@w.Title</td>
-                            <td><span class="@Badge(w.Status)">@VnStatus(w.Status)</span></td>
-                            <td>
-                                @if (w.DueDate.HasValue)
-                                {
-                                    <span>@w.DueDate.Value.ToString("dd/MM/yyyy")</span>
-                                }
-                                @if (overdue)
-                                {
-                                    <span class="ms-2 badge rounded-pill text-bg-danger">Quá hạn</span>
-                                }
-                                else if (dueSoon)
-                                {
+            <tr class="@(overdue ? "row-overdue" : dueSoon ? "row-due-soon" : "")">
+                <td class="fw-500">@w.Title</td>
+                <td>
+  <span class="status-badge text-white @BadgeColor(w.Status)">
+    @VnStatus(w.Status)
+  </span>
+</td>
 
-                                    <span class="ms-2 badge rounded-pill text-bg-warning text-dark">T+2</span>
-                                }
-                                @if (futureDone)
-                                {
-                                    <span class="ms-2 badge rounded-pill text-bg-danger">Ngày hoàn thành &gt; hiện tại</span>
-                                }
-                            </td>
-                            <td>@w.Enterprise?.TaxPayerName</td>
-                            <td>@w.Manager?.Name</td>
-                            <td class="text-end">
-                                <a asp-controller="WorkLogs" asp-action="Index" asp-route-workItemId="@w.Id"
-                                   class="btn btn-sm btn-info-subtle btn-icon" title="Nhật ký">
-                                    <i class="bi bi-journal-text"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    }
-                }
-            </tbody>
+                <td>
+                    @if (w.DueDate.HasValue) { <span>@w.DueDate.Value.ToString("dd/MM/yyyy")</span> }
+                    @if (overdue)   { <span class="ms-2 badge rounded-pill text-bg-danger">Quá hạn</span> }
+                    else if (dueSoon) { <span class="ms-2 badge rounded-pill text-bg-warning text-dark">T+2</span> }
+                    @if (futureDone) { <span class="ms-2 badge rounded-pill text-bg-danger">Ngày hoàn thành &gt; hiện tại</span> }
+                </td>
+
+                <td>@w.Enterprise?.TaxPayerName</td>
+                <td class="text-nowrap">@w.Enterprise?.TaxCode</td>  <!-- NEW -->
+                <td>@w.Manager?.Name</td>
+
+                <td class="text-end">
+                    <a asp-controller="WorkLogs" asp-action="Index" asp-route-workItemId="@w.Id"
+                       class="btn btn-sm btn-info-subtle btn-icon" title="Nhật ký">
+                        <i class="bi bi-journal-text"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+</tbody>
         </table>
     </div>
 </div>
